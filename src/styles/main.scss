@@ -1,21 +1,42 @@
-// PRIMARY STYLE 
 
+@import "_breakpoints.scss";
+@import "_mixins.scss";
+@import "_fonts.scss";
+@import "_animation.scss";
+
+// PRIMARY STYLE 
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+  
 }
 
 body {
   font-size: 100%;
-  font-size: 1.6rem;
-  font-family: sans-serif;
+  font-family: 'Avenir Next';
   color: #444444;
   background-color: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato';
+}
+
+h1.headline {
+  font-size: 2.4em;
+  text-align: center;
+}
+
+h3.subhead {
+  font-size: 16px;
+  text-align: center;
+  color: #cdcdcd;
+  line-height: 19px;
+  font-weight: lighter;
 }
 
 ul, ol {
@@ -24,4 +45,63 @@ ul, ol {
   padding: 0;
 }
 
+.alert--message {
+  margin: 2%;
+  color: #cdcdcd;
+  line-height: 19px;
+}
+
+.input--help {
+  font-family: 'Avenir Next Medium';
+}
+
+.form--input .input-field label {
+  font-size: 1.4rem;
+}
+
+.form--input > input:focus:not([type]):not([readonly]), input[type="date"]:focus:not(.browser-default):not([readonly]), input[type="datetime-local"]:focus:not(.browser-default):not([readonly]), input[type="datetime"]:focus:not(.browser-default):not([readonly]), input[type="email"]:focus:not(.browser-default):not([readonly]), input[type="number"]:focus:not(.browser-default):not([readonly]), input[type="password"]:focus:not(.browser-default):not([readonly]), input[type="search"]:focus:not(.browser-default):not([readonly]), input[type="tel"]:focus:not(.browser-default):not([readonly]), input[type="text"]:focus:not(.browser-default):not([readonly]), input[type="time"]:focus:not(.browser-default):not([readonly]), input[type="url"]:focus:not(.browser-default):not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #3949ab;
+    box-shadow: 0 1px 0 0 #3949ab;
+}
+
+.warning--message {
+  color: #F05069;  
+}
+
 // END PRIMARY STYLE 
+
+
+// MATERIALIZE CSS OVERRIDES
+.page--full.row {
+  margin-bottom: 0;
+}
+
+.form--button.waves-effect.waves-light.btn-large {
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 35px;
+  background-color: #9CBD3B;
+  display: block;
+  text-transform: none;
+  font-weight: 900;  
+}
+
+.spinner-layer.spinner-white {
+  border-color: #fff;
+}
+
+.preloader-wrapper.smaller {
+    width: 26px;
+    height: 26px;
+    margin-top: 15px;
+}
+
+@media #{$small-and-down} {
+
+}
+
+
+@media #{$medium-and-up} {
+
+}
+
