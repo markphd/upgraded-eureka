@@ -1,0 +1,2011 @@
+extends layout/master.jade
+
+block content
+  #innercontent.choose_domain.mg-top-40.mg-bottom-70.mg-bottom-50-sm.mg-bottom-20-xs
+    h1 Find your perfect domain name
+    .choose-domain__search-wrapper
+      .choose-domain__search
+        form#domainSearchForm(name='customerRegistrantForm', method='post', action='/en/order')
+          input(name='csrft', value='803dc6504f4a90bc2514da98e78c52a5', type='hidden')
+          .order-domain-search
+            div
+              input#kasper--input-border(name='domainName', autofocus='', placeholder='Search domain', autocomplete='off', autocapitalize='off', type='text')
+              select.hide(name='domainSuffix')
+                option(value='ALL') All
+                option(value='.com') .com
+                option(value='.ca') .ca
+                option(value='.net') .net
+                option(value='.org') .org
+                option(value='.me') .me
+                option(value='.nl') .nl
+                option(value='.one') .one
+                option(value='.academy') .academy
+                option(value='.accountants') .accountants
+                option(value='.actor') .actor
+                option(value='.ae') .ae
+                option(value='.ag') .ag
+                option(value='.agency') .agency
+                option(value='.archi') .archi
+                option(value='.asia') .asia
+                option(value='.associates') .associates
+                option(value='.at') .at
+                option(value='.audio') .audio
+                option(value='.bar') .bar
+                option(value='.bargains') .bargains
+                option(value='.bayern') .bayern
+                option(value='.be') .be
+                option(value='.beer') .beer
+                option(value='.best') .best
+                option(value='.bid') .bid
+                option(value='.bike') .bike
+                option(value='.bio') .bio
+                option(value='.biz') .biz
+                option(value='.black') .black
+                option(value='.blackfriday') .blackfriday
+                option(value='.blue') .blue
+                option(value='.boutique') .boutique
+                option(value='.brussels') .brussels
+                option(value='.build') .build
+                option(value='.builders') .builders
+                option(value='.buzz') .buzz
+                option(value='.bz') .bz
+                option(value='.bzh') .bzh
+                option(value='.cab') .cab
+                option(value='.camera') .camera
+                option(value='.camp') .camp
+                option(value='.capital') .capital
+                option(value='.cards') .cards
+                option(value='.career') .career
+                option(value='.careers') .careers
+                option(value='.cash') .cash
+                option(value='.catering') .catering
+                option(value='.cc') .cc
+                option(value='.center') .center
+                option(value='.ceo') .ceo
+                option(value='.ch') .ch
+                option(value='.cheap') .cheap
+                option(value='.christmas') .christmas
+                option(value='.church') .church
+                option(value='.claims') .claims
+                option(value='.cleaning') .cleaning
+                option(value='.click') .click
+                option(value='.clothing') .clothing
+                option(value='.club') .club
+                option(value='.co') .co
+                option(value='.co.uk') .co.uk
+                option(value='.codes') .codes
+                option(value='.coffee') .coffee
+                option(value='.cologne') .cologne
+                option(value='.com.mx') .com.mx
+                option(value='.com.pt') .com.pt
+                option(value='.community') .community
+                option(value='.company') .company
+                option(value='.computer') .computer
+                option(value='.condos') .condos
+                option(value='.construction') .construction
+                option(value='.consulting') .consulting
+                option(value='.contractors') .contractors
+                option(value='.cooking') .cooking
+                option(value='.cool') .cool
+                option(value='.country') .country
+                option(value='.credit') .credit
+                option(value='.creditcard') .creditcard
+                option(value='.cruises') .cruises
+                option(value='.cymru') .cymru
+                option(value='.cz') .cz
+                option(value='.dance') .dance
+                option(value='.dating') .dating
+                option(value='.de') .de
+                option(value='.democrat') .democrat
+                option(value='.dental') .dental
+                option(value='.diamonds') .diamonds
+                option(value='.diet') .diet
+                option(value='.digital') .digital
+                option(value='.direct') .direct
+                option(value='.directory') .directory
+                option(value='.discount') .discount
+                option(value='.dk') .dk
+                option(value='.domains') .domains
+                option(value='.education') .education
+                option(value='.email') .email
+                option(value='.engineering') .engineering
+                option(value='.enterprises') .enterprises
+                option(value='.equipment') .equipment
+                option(value='.estate') .estate
+                option(value='.eu') .eu
+                option(value='.events') .events
+                option(value='.exchange') .exchange
+                option(value='.expert') .expert
+                option(value='.exposed') .exposed
+                option(value='.fail') .fail
+                option(value='.farm') .farm
+                option(value='.finance') .finance
+                option(value='.fish') .fish
+                option(value='.fishing') .fishing
+                option(value='.fitness') .fitness
+                option(value='.flights') .flights
+                option(value='.florist') .florist
+                option(value='.flowers') .flowers
+                option(value='.foundation') .foundation
+                option(value='.fr') .fr
+                option(value='.fund') .fund
+                option(value='.furniture') .furniture
+                option(value='.futbol') .futbol
+                option(value='.gallery') .gallery
+                option(value='.gift') .gift
+                option(value='.glass') .glass
+                option(value='.graphics') .graphics
+                option(value='.gratis') .gratis
+                option(value='.gripe') .gripe
+                option(value='.guide') .guide
+                option(value='.guitars') .guitars
+                option(value='.guru') .guru
+                option(value='.help') .help
+                option(value='.hiphop') .hiphop
+                option(value='.holdings') .holdings
+                option(value='.holiday') .holiday
+                option(value='.horse') .horse
+                option(value='.house') .house
+                option(value='.immobilien') .immobilien
+                option(value='.in') .in
+                option(value='.industries') .industries
+                option(value='.info') .info
+                option(value='.ink') .ink
+                option(value='.institute') .institute
+                option(value='.insure') .insure
+                option(value='.international') .international
+                option(value='.investments') .investments
+                option(value='.it') .it
+                option(value='.jetzt') .jetzt
+                option(value='.kaufen') .kaufen
+                option(value='.kim') .kim
+                option(value='.kitchen') .kitchen
+                option(value='.kiwi') .kiwi
+                option(value='.koeln') .koeln
+                option(value='.land') .land
+                option(value='.lease') .lease
+                option(value='.li') .li
+                option(value='.life') .life
+                option(value='.lighting') .lighting
+                option(value='.limo') .limo
+                option(value='.link') .link
+                option(value='.loans') .loans
+                option(value='.lol') .lol
+                option(value='.london') .london
+                option(value='.maison') .maison
+                option(value='.management') .management
+                option(value='.marketing') .marketing
+                option(value='.me.uk') .me.uk
+                option(value='.media') .media
+                option(value='.menu') .menu
+                option(value='.mobi') .mobi
+                option(value='.moda') .moda
+                option(value='.mom') .mom
+                option(value='.mx') .mx
+                option(value='.nagoya') .nagoya
+                option(value='.name') .name
+                option(value='.ninja') .ninja
+                option(value='.nu') .nu
+                option(value='.onl') .onl
+                option(value='.org.uk') .org.uk
+                option(value='.paris') .paris
+                option(value='.partners') .partners
+                option(value='.parts') .parts
+                option(value='.photo') .photo
+                option(value='.photography') .photography
+                option(value='.photos') .photos
+                option(value='.pics') .pics
+                option(value='.pictures') .pictures
+                option(value='.pink') .pink
+                option(value='.pl') .pl
+                option(value='.place') .place
+                option(value='.plumbing') .plumbing
+                option(value='.pm') .pm
+                option(value='.productions') .productions
+                option(value='.properties') .properties
+                option(value='.property') .property
+                option(value='.pt') .pt
+                option(value='.pub') .pub
+                option(value='.qpon') .qpon
+                option(value='.re') .re
+                option(value='.recipes') .recipes
+                option(value='.red') .red
+                option(value='.reisen') .reisen
+                option(value='.rentals') .rentals
+                option(value='.repair') .repair
+                option(value='.report') .report
+                option(value='.republican') .republican
+                option(value='.rest') .rest
+                option(value='.reviews') .reviews
+                option(value='.rio') .rio
+                option(value='.rocks') .rocks
+                option(value='.rodeo') .rodeo
+                option(value='.schule') .schule
+                option(value='.se') .se
+                option(value='.services') .services
+                option(value='.sexy') .sexy
+                option(value='.shiksha') .shiksha
+                option(value='.shoes') .shoes
+                option(value='.singles') .singles
+                option(value='.solar') .solar
+                option(value='.solutions') .solutions
+                option(value='.supplies') .supplies
+                option(value='.supply') .supply
+                option(value='.support') .support
+                option(value='.surf') .surf
+                option(value='.surgery') .surgery
+                option(value='.systems') .systems
+                option(value='.tattoo') .tattoo
+                option(value='.tax') .tax
+                option(value='.technology') .technology
+                option(value='.tf') .tf
+                option(value='.tienda') .tienda
+                option(value='.tips') .tips
+                option(value='.today') .today
+                option(value='.tokyo') .tokyo
+                option(value='.tools') .tools
+                option(value='.town') .town
+                option(value='.toys') .toys
+                option(value='.trade') .trade
+                option(value='.training') .training
+                option(value='.tv') .tv
+                option(value='.uk') .uk
+                option(value='.university') .university
+                option(value='.uno') .uno
+                option(value='.vacations') .vacations
+                option(value='.ventures') .ventures
+                option(value='.viajes') .viajes
+                option(value='.villas') .villas
+                option(value='.vision') .vision
+                option(value='.vlaanderen') .vlaanderen
+                option(value='.vodka') .vodka
+                option(value='.voyage') .voyage
+                option(value='.wales') .wales
+                option(value='.watch') .watch
+                option(value='.webcam') .webcam
+                option(value='.wf') .wf
+                option(value='.wien') .wien
+                option(value='.wiki') .wiki
+                option(value='.works') .works
+                option(value='.ws') .ws
+                option(value='.wtf') .wtf
+                option(value='.xyz') .xyz
+                option(value='.yt') .yt
+                option(value='.zone') .zone
+              button.btn.blue(type='submit', name='domain')
+                span Search now
+              .domainSearchResultContainer(style='width: 858px; border-width: 0px; margin-left: 0px; margin-top: 52px; display: none;')
+    section.price-list.price-list__popular-domains
+      .price-list__annualfee-title
+        | Annual fee in EUR
+      h2 Popular domains
+      .popular-domains--box.com
+        .popular-domains--title
+          .popular-domains--tld
+            | .com
+          .popular-domains--price
+            | 20.00
+      .popular-domains--box.dk
+        .popular-domains--title
+          .popular-domains--tld
+            | .dk
+          .popular-domains--price
+            | 20.00
+      .popular-domains--box.me
+        .popular-domains--title
+          .popular-domains--tld
+            | .me
+          .popular-domains--price
+            | <span>1st year free</span> 
+            em 20.00
+      .popular-domains--box.net
+        .popular-domains--title
+          .popular-domains--tld
+            | .net
+          .popular-domains--price
+            | 20.00
+    
+    hr(style="clear: both;")
+
+    section.price-list.price-list__other-domains
+      .price-list__annualfee-title
+        | Annual fee in CAD
+      h2 Other domains
+      .price-list__row
+        .price-list__tld
+          | .academy
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .accountants
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .actor
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .ae
+        .price-list__price-info
+          span.price-list__price
+            | 49.00
+      .price-list__row
+        .price-list__tld
+          | .ag
+        .price-list__price-info
+          span.price-list__price
+            | 113.00
+      .price-list__row
+        .price-list__tld
+          | .agency
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .archi
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .asia
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .associates
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .at
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 20.00
+      .price-list__row
+        .price-list__tld
+          | .audio
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .bar
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .bargains
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .bayern
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .be
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 12.00
+      .price-list__row
+        .price-list__tld
+          | .beer
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .best
+        .price-list__price-info
+          span.price-list__price
+            | 107.00
+      .price-list__row
+        .price-list__tld
+          | .bid
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .bike
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .bio
+        .price-list__price-info
+          span.price-list__price
+            | 75.00
+      .price-list__row
+        .price-list__tld
+          | .biz
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .black
+        .price-list__price-info
+          span.price-list__price
+            | 49.00
+      .price-list__row
+        .price-list__tld
+          | .blackfriday
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .blue
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .boutique
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .brussels
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .build
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .builders
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .buzz
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .bz
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .bzh
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .cab
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .camera
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .camp
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .capital
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .cards
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .career
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .careers
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .cash
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .catering
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .cc
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .center
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .ceo
+        .price-list__price-info
+          span.price-list__price
+            | 107.00
+      .price-list__row
+        .price-list__tld
+          | .ch
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .cheap
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .christmas
+        .price-list__price-info
+          span.price-list__price
+            | 49.00
+      .price-list__row
+        .price-list__tld
+          | .church
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .claims
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .cleaning
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .click
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .clothing
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .club
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .co
+        .price-list__price-info
+          span.price-list__price
+            | 36.00
+      .price-list__row
+        .price-list__tld
+          | .co.uk
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 13.00
+      .price-list__row
+        .price-list__tld
+          | .codes
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .coffee
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .cologne
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .com.mx
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 20.00
+      .price-list__row
+        .price-list__tld
+          | .com.pt
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .community
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .company
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .computer
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .condos
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .construction
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .consulting
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .contractors
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .cooking
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .cool
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .country
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .credit
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .creditcard
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .cruises
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .cymru
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .cz
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .dance
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .dating
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .de
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 8.00
+      .price-list__row
+        .price-list__tld
+          | .democrat
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .dental
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .diamonds
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .diet
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .digital
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .direct
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .directory
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .discount
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .dk
+        .price-list__price-info
+          span.price-list__price
+            | 11.50
+      .price-list__row
+        .price-list__tld
+          | .domains
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .education
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .email
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .engineering
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .enterprises
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .equipment
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .estate
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .eu
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 15.00
+      .price-list__row
+        .price-list__tld
+          | .events
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .exchange
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .expert
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .exposed
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .fail
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .farm
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .finance
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .fish
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .fishing
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .fitness
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .flights
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .florist
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .flowers
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .foundation
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .fr
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .fund
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .furniture
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .futbol
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .gallery
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .gift
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .glass
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .graphics
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .gratis
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .gripe
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .guide
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .guitars
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .guru
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .help
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .hiphop
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .holdings
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .holiday
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .horse
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .house
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .immobilien
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .in
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .industries
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .info
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .ink
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .institute
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .insure
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .international
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .investments
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .it
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .jetzt
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .kaufen
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .kim
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .kitchen
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .kiwi
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .koeln
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .land
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .lease
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .li
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .life
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .lighting
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .limo
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .link
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .loans
+        .price-list__price-info
+          span.price-list__price
+            | 80.00
+      .price-list__row
+        .price-list__tld
+          | .lol
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .london
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .maison
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .management
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .marketing
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .me.uk
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 13.00
+      .price-list__row
+        .price-list__tld
+          | .media
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .menu
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .mobi
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .moda
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .mom
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .mx
+        .price-list__price-info
+          span.price-list__price
+            | 49.00
+      .price-list__row
+        .price-list__tld
+          | .nagoya
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .name
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 12.00
+      .price-list__row
+        .price-list__tld
+          | .ninja
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .nu
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 18.50
+      .price-list__row
+        .price-list__tld
+          | .onl
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .org.uk
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 13.00
+      .price-list__row
+        .price-list__tld
+          | .paris
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .partners
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .parts
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .photo
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .photography
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .photos
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .pics
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .pictures
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .pink
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .pl
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .place
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .plumbing
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .pm
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .productions
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .properties
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .property
+        .price-list__price-info
+          span.price-list__price
+            | 160.00
+      .price-list__row
+        .price-list__tld
+          | .pt
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .pub
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .qpon
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .re
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .recipes
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .red
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .reisen
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .rentals
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .repair
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .report
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .republican
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .rest
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .reviews
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .rio
+        .price-list__price-info
+          span.price-list__price
+            | 24.00
+      .price-list__row
+        .price-list__tld
+          | .rocks
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .rodeo
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .schule
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .se
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 18.50
+      .price-list__row
+        .price-list__tld
+          | .services
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .sexy
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .shiksha
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .shoes
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .singles
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .solar
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .solutions
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .supplies
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .supply
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .support
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .surf
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .surgery
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .systems
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .tattoo
+        .price-list__price-info
+          span.price-list__price
+            | 49.00
+      .price-list__row
+        .price-list__tld
+          | .tax
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .technology
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .tf
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .tienda
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .tips
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .today
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .tokyo
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 23.00
+      .price-list__row
+        .price-list__tld
+          | .tools
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .town
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .toys
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .trade
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .training
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .tv
+        .price-list__price-info
+          span.price-list__price
+            | 36.00
+      .price-list__row
+        .price-list__tld
+          | .uk
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 13.00
+      .price-list__row
+        .price-list__tld
+          | .university
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .uno
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .vacations
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .ventures
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .viajes
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .villas
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .vision
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .vlaanderen
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .vodka
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .voyage
+        .price-list__price-info
+          span.price-list__price
+            | 54.00
+      .price-list__row
+        .price-list__tld
+          | .wales
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .watch
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .webcam
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .wf
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .wien
+        .price-list__price-info
+          span.price-list__price
+            | 40.00
+      .price-list__row
+        .price-list__tld
+          | .wiki
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .works
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .ws
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 22.00
+      .price-list__row
+        .price-list__tld
+          | .wtf
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+      .price-list__row
+        .price-list__tld
+          | .xyz
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 16.00
+      .price-list__row
+        .price-list__tld
+          | .yt
+        .price-list__price-info
+          span.price-list__rebatebox 1st year free 
+          span.price-list__line-through.hidden-xs
+            span.price-list__price
+              | 11.00
+      .price-list__row
+        .price-list__tld
+          | .zone
+        .price-list__price-info
+          span.price-list__price
+            | 32.00
+
+    .horizontalDottedSeparator.dark
+    p
+      | Domain registration and web hosting services are seamlessly integrated at One.com. We register the domain in your name, and you are free to do with it what you want. You can even transfer the domain to another web host, if you would like to.
