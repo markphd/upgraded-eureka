@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Creditcard - grey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Creditcard---grey">
+            <ellipse id="Oval-4-Copy-3" fill="#CBCBCB" cx="30" cy="30" rx="30" ry="30"></ellipse>
+            <g id="Group-2" transform="translate(17.000000, 21.000000)">
+                <path d="M23.2631579,0 L9.57894737,0 C8.07368421,0 6.84210526,1.22142857 6.84210526,2.71428571 L6.84210526,12.2142857 C6.84210526,12.2142857 14.0947368,7.73571429 15.8736842,9.5 C17.6526316,11.2642857 14.0947368,14.9285714 14.0947368,14.9285714 L23.2631579,14.9285714 C24.7684211,14.9285714 26,13.7071429 26,12.2142857 L26,2.71428571 C26,1.22142857 24.7684211,0 23.2631579,0 Z M23.2631579,5.42857143 L9.57894737,5.42857143 L9.57894737,2.71428571 L23.2631579,2.71428571 L23.2631579,5.42857143 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M7.93684211,2.71428571 C7.11578947,2.71428571 5.74736842,3.12142857 4.24210526,4.47857143 L0,8.14285714 L0,19 L5.2,19 C9.85263158,19 10.9473684,17.6428571 13,15.7428571 C15.0526316,13.8428571 17.9263158,11.8071429 15.8736842,9.5 C14.6421053,8.00714286 13,8.27857143 10.1263158,10.3142857 C8.62105263,11.2642857 7.25263158,12.2142857 7.25263158,12.2142857" id="Shape" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

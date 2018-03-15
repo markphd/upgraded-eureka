@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>2-customer</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-customer" fill="#4E4E4E" fill-rule="nonzero">
+            <path d="M7.5,9 C5.43220795,9 3.75593129,6.98528137 3.75593129,4.5 C3.75593129,2.01471863 5.43220795,0 7.5,0 C9.56779205,0 11.2440687,2.01471863 11.2440687,4.5 C11.2440687,6.98528137 9.56779205,9 7.5,9 Z M14.8383747,12.825 C15.3625443,13.875 14.5388492,15 13.4156286,15 L1.58437143,15 C0.461150817,15 -0.362544301,13.875 0.16162532,12.9 C0.835557688,11.55 2.10854105,10.425 3.75593129,9.75 C4.20521953,9.525 4.72938915,9.6 5.10379602,9.75 C5.85260977,10.2 6.60142351,10.425 7.5,10.425 C8.39857649,10.425 9.14739023,10.2 9.89620398,9.75 C10.2706108,9.525 10.7947805,9.525 11.2440687,9.675 C12.8914589,10.35 14.1644423,11.475 14.8383747,12.825 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
