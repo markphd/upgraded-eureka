@@ -72,3 +72,39 @@
 .popular-domains--price em {
   text-decoration: line-through;
 }
+
+
+.price-list__row {
+  height: 57px;
+}
+
+.price-list__row .price-list__tld {
+  line-height: 40px; 
+}
+
+.price-list__tld, .price-list__price-info {
+  height: 100%;
+  padding: 10px 30px !important;
+}
+
+.price-list__price {
+  margin-top: 10px;
+}
+
+.price-list--promo > em {
+  text-decoration: line-through;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.price-list--promo {
+  font-weight: bold;
+}
+
+.domain--list-more {
+  color: #74A345;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
