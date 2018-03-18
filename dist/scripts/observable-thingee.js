@@ -13,5 +13,16 @@
 //     .catch(err => console.log('Observable.ajax error', err))
 //     .subscribe(res => console.log('Observable.ajax', res))
 
-Rx.Observable.from(fetch(`https://www.reddit.com/r/reactjs.json`))
-  .subscribe(res => console.log('window.fetch', res))
+
+const domainSearchInput = Rx.Observable.fromEvent(document.querySelector('#kasper--input-border'), 'input');
+const heading = document.querySelector('#innercontent');
+
+let userDomain;
+
+domainSearchInput.filter(event => event.target.value.length > 6)
+  .map(event => event.target.value)
+  .subscribe(value => userDomain = value);
+
+const domainSearchBtn = Rx.Observable.fromEvent(document.querySelector('button'), 'click');
+domainSearchBtn.map(event => event.preventDefault()).subscribe( () => console.log(userDomain));
+
