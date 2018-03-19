@@ -58,8 +58,9 @@ domainSearchBtn
   	if (userDomain == 'one.com') {
   	  result.innerHTML = changeType
   	} else {
-  	  result.innerHTML = allTld.map( tld => `
+  	  result.innerHTML = `<h2>These domains are available</h2><span>Annual fee in EUR</span>` + allTld.map( tld => `
   	  	<div class="price-list__row">
+  	  	  <span class="status"></span>
   	  	  <div class="price-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
   	  	  <div class="price-list__price-info"><span class="price-list--promo">1st year free <em>20.00</em></span></div>
   	  	</div>`).join(' ')

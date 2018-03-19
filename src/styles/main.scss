@@ -7,6 +7,15 @@
   border-right: none;
 }
 
+#kasper--result-list > h2 {
+  display: inline-block;
+}
+
+#kasper--result-list > span {
+  float: right;
+  display: block;
+}
+
 .popular-domains--box {
   height: 190px;
   width: 260px;
@@ -77,6 +86,21 @@
 .price-list__row {
   background-color: #f9f9f9;
   height: 57px;
+}
+
+.price-list__row > .status {
+  width: 30px;
+  height: 20px;
+  flex-shrink: 0;
+  background-image: url('../images/onecom/sprite-source/aval.svg');
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 
 .price-list__row .price-list__tld {
