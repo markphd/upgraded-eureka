@@ -87,6 +87,14 @@
 .price-list__row {
   background-color: #f9f9f9;
   height: 57px;
+  border-bottom: 1px solid #fff;
+}
+
+.suggested-list__row {
+  background-color: #f9f9f9;
+  height: 95px;
+  position: relative;
+  padding-top: 10px;
 }
 
 .price-list__row > .status {
@@ -104,31 +112,75 @@
   left: 20px;
 }
 
-.price-list__row .price-list__tld {
+.suggested-list__row > .status {
+  width: 30px;
+  height: 20px;
+  flex-shrink: 0;
+  background-image: url('../images/onecom/sprite-source/aval.svg');
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  position: relative;
+  top: 26px;
+  left: 20px;
+}
+
+.suggested-list__row > hr.divider {
+  width: 95%;
+  margin-left: 2%;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0;
+  top: 64px;
+}
+
+.suggested-list__row:last-child {
+  background-color: red;
+}
+
+.price-list__row .price-list__tld, .price-list__row .suggested-list__tld {
   line-height: 40px; 
 }
 
-.price-list__tld, .price-list__price-info {
+.price-list__tld, .price-list__price-info, .suggested-list__tld, .suggested-list__price-info {
   height: 100%;
   padding: 10px 30px !important;
 }
 
-.price-list__price {
+.price-list__price, .suggested-list__price {
   margin-top: 10px;
 }
 
-.price-list__price-info {
+.price-list__price-info, .suggested-list__price-info {
   float: right;
   width: 300px;
 }
 
-.price-list--promo > em {
+.price-list--promo > em, .suggested-list--promo > em {
   text-decoration: line-through;
   font-weight: normal;
   margin-left: 10px;
 }
 
-.price-list--promo {
+.suggested-list__tld {
+  height: 27px;
+  width: 76px;
+  color: #4E4E4E;
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: 50px;
+  margin-left: 25px;
+}
+
+.suggested-list--promo {
+  float: right;
+  margin-right: 20px;
+  margin-top: -10px;
+}
+
+.price-list--promo, .suggested-list--promo {
   font-weight: bold;
   line-height: 2.4em;
 }

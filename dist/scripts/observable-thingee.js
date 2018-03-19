@@ -64,10 +64,12 @@ domainSearchBtn
   	if (userDomain == 'one.com') {
   	  result.innerHTML = domainOccupied + 
   	  suggestedTld.map( tld => `
-  	  <div class="price-list__row">
+  	  <div class="suggested-list__row">
   	    <span class="status"></span>
-  	    <div class="price-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
-  	    <div class="price-list__price-info"><span class="price-list--promo">1st year free <em>20.00</em></span></div>
+  	    <div class="suggested-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
+  	    <div class="suggested-list__suggested-info"><span class="suggested-list--promo">1st year free <em>20.00</em></span></div>
+  	    <br>
+  	    <hr class="divider">
   	  </div>`).join(' ') +
   	  changeType
   	} else {
