@@ -14,6 +14,7 @@
 #kasper--result-list > span {
   float: right;
   display: block;
+  color: #999999;
 }
 
 .popular-domains--box {
@@ -141,6 +142,7 @@
 }
 
 .domain--search-status {
+  margin-bottom: 30px;
   padding: 20px 30px;
   max-width: 1500px;
   max-height: 110px;
