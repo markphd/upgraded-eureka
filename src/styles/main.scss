@@ -154,11 +154,15 @@
   border-left: 1px solid #fff;
 }
 
-.suggested-list__suggested-info::after {
+.suggested-list--promo {
+  position: relative;
+}
+
+.suggested-list--promo::before {
   content: '';
   position: absolute;
-  top: 26px;
-  right: 135px;
+  top: 0;
+  right: -10px;
   display: block;
   border-left: 1px solid #d6d6d6;
   height: 41px;

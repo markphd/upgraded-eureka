@@ -64,7 +64,7 @@ domainSearchBtn
   	event.preventDefault()
   })
   .subscribe( (event) => {
-  	console.log(event)
+  	
   	if (userDomain == 'one.com') {
   	  result.innerHTML = domainOccupied + 
   	  suggestedTld.map( tld => `
@@ -82,18 +82,25 @@ domainSearchBtn
   	  	const orderSelected = `<input class="domain--tld-select" value="Remove" type="submit">`
   	  	event.target.insertAdjacentHTML("afterend", orderSelected);
   	  	event.preventDefault()
-  	  }).subscribe( () => {
-  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
-  	  	let searchNav = document.getElementsByClassName('order-domain-search')[0]
-  	  	let searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
+
+  	  	let src = selectTld.first( () => {
+  	  		const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
+  	  		let searchNav = document.getElementsByClassName('order-domain-search')[0]
+  	  		let searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
+  	  		
+  	  		searchNav.style.width = '959px';
+  	  		searchNav.style.display = 'inline-block';
+  	  		searchNav.style.marginBottom = '-20px';
+  	  		searchNavBorder.style.border = 'none';
+
+  	  		searchNav.insertAdjacentHTML("afterend", orderStep1);
+  	  	})
   	  	
-  	  	searchNav.style.width = '959px';
-  	  	searchNav.style.display = 'inline-block';
-  	  	searchNav.style.marginBottom = '-20px';
-  	  	searchNavBorder.style.border = 'none';
+  	  }).subscribe( () => {
+  	  	
 
-  	  	searchNav.insertAdjacentHTML("afterend", orderStep1);
-
+  	  	
+  	  	
   	  	console.log(selectTld)
 
   	  })
