@@ -136,8 +136,18 @@
   top: 64px;
 }
 
-.suggested-list__row:last-child {
-  background-color: red;
+span.checked {
+  display: block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  background: url(../images/signup/checkmark-large.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 90%;
+  margin-right: -9px;
+  margin-top: 2px;
+  
 }
 
 .suggested-domain--select {
@@ -162,7 +172,7 @@
   content: '';
   position: absolute;
   top: 0;
-  right: -10px;
+  right: -15px;
   display: block;
   border-left: 1px solid #d6d6d6;
   height: 41px;
@@ -221,7 +231,7 @@
 
 .suggested-list--promo {
   float: right;
-  margin-right: 25px;
+  margin-right: 30px;
   margin-top: -10px;
 }
 
