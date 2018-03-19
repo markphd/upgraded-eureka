@@ -59,19 +59,36 @@ domainSearchInput.filter(event => event.target.value.length > 6)
 const domainSearchBtn = Rx.Observable.fromEvent(document.querySelector('button'), 'click');
 
 domainSearchBtn
-  .map(event => event.preventDefault())
-  .subscribe( () => {
+  .map(event => {
+  	event.preventDefault()
+  })
+  .subscribe( (e) => {
+  	console.log(e)
   	if (userDomain == 'one.com') {
   	  result.innerHTML = domainOccupied + 
   	  suggestedTld.map( tld => `
   	  <div class="suggested-list__row">
   	    <span class="status"></span>
   	    <div class="suggested-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
+  	    <input class="suggested-domain--select" type="submit" value="Select"></input>
   	    <div class="suggested-list__suggested-info"><span class="suggested-list--promo">1st year free <em>20.00</em></span></div>
   	    <br>
   	    <hr class="divider">
   	  </div>`).join(' ') +
   	  changeType
+  	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
+  	  selectTld.map(event => event.preventDefault()).subscribe( () => {
+  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
+  	  	let searchNav = document.getElementsByClassName('order-domain-search')[0]
+  	  	let searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
+  	  	
+  	  	searchNav.style.width = '959px';
+  	  	searchNav.style.display = 'inline-block';
+  	  	searchNav.style.marginBottom = '-20px';
+  	  	searchNavBorder.style.border = 'none';
+
+  	  	searchNav.insertAdjacentHTML("afterend", orderStep1);
+  	  })
   	} else {
   	  result.innerHTML = 
   	    `<h2>These domains are available</h2><span>Annual fee in EUR</span>` +

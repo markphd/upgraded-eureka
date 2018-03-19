@@ -8,7 +8,7 @@ block content
         form#domainSearchForm(name='customerRegistrantForm', method='post', action='/en/order')
           input(name='csrft', value='803dc6504f4a90bc2514da98e78c52a5', type='hidden')
           .order-domain-search
-            div
+            div.domain--search-divider
               input#kasper--input-border(name='domainName', autofocus='', placeholder='Search domain', autocomplete='off', autocapitalize='off', type='text')
               select.hide(name='domainSuffix')
                 option(value='ALL') All
