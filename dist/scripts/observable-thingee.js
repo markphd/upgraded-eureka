@@ -63,6 +63,6 @@ domainSearchBtn
   	  	  <span class="status"></span>
   	  	  <div class="price-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
   	  	  <div class="price-list__price-info"><span class="price-list--promo">1st year free <em>20.00</em></span></div>
-  	  	</div>`).join(' ')
+  	  	</div>`).join(' ') + changeType
   	}
   });
