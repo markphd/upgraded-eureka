@@ -60,10 +60,11 @@ const domainSearchBtn = Rx.Observable.fromEvent(document.querySelector('button')
 
 domainSearchBtn
   .map(event => {
+  	console.log(event)
   	event.preventDefault()
   })
-  .subscribe( (e) => {
-  	console.log(e)
+  .subscribe( (event) => {
+  	console.log(event)
   	if (userDomain == 'one.com') {
   	  result.innerHTML = domainOccupied + 
   	  suggestedTld.map( tld => `
@@ -77,7 +78,11 @@ domainSearchBtn
   	  </div>`).join(' ') +
   	  changeType
   	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
-  	  selectTld.map(event => event.preventDefault()).subscribe( () => {
+  	  selectTld.map(event => {
+  	  	const orderSelected = `<input class="domain--tld-select" value="Remove" type="submit">`
+  	  	event.target.insertAdjacentHTML("afterend", orderSelected);
+  	  	event.preventDefault()
+  	  }).subscribe( () => {
   	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
   	  	let searchNav = document.getElementsByClassName('order-domain-search')[0]
   	  	let searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
@@ -88,6 +93,9 @@ domainSearchBtn
   	  	searchNavBorder.style.border = 'none';
 
   	  	searchNav.insertAdjacentHTML("afterend", orderStep1);
+
+  	  	console.log(selectTld)
+
   	  })
   	} else {
   	  result.innerHTML = 
