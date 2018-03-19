@@ -1,0 +1,31 @@
+extends layout/master.jade
+
+block content
+
+    .domain-search-status
+      span.status
+      h2.domain-search-status__header--taken
+        | hello.com is occupied
+      p.domain-search-status__text.mg-bottom-30
+        | If you own this domain, we can transfer it for you so you can attach a One.com web space to it.
+      .domain-search-status__buttons
+        form#customerRegistrantForm(name='customerRegistrantForm', method='post', action='/add-on.do')
+          input(name='csrft', value='ee9741f288ad4e031acb963b336286a2', type='hidden')
+          input(name='locale', value='en', type='hidden')
+          input(name='domainName', value='hello', autocomplete='off', style='', type='hidden')
+          input(name='domainSuffix', value='.com', type='hidden')
+          input(name='size', value='smallnew', type='hidden')
+          input(name='upgradePreviousSize', value='', type='hidden')
+          input(name='webspaceUpgradeToPlus', value='', type='hidden')
+          input(name='idn', value='false', type='hidden')
+          input(name='campaign', value='false', type='hidden')
+          input(name='existingCustomer', value='false', type='hidden')
+          input(name='hideLogOut', value='false', type='hidden')
+          input(name='edcKey', value='false', type='hidden')
+          input(name='rebateCouponCode', value='', type='hidden')
+          #forwardback.equalbuttons
+            input#domain_move_back.btn.blue(name='back', value='This is not my domain', type='submit')
+            input#domain_taken_move_form_move.btn.blue(data-bind='click: $root.domainSearch.addTransfer.bind($data)', name='move', value='Yes, this is my domain', type='submit')
+          #waitmessage.hide
+            img(src='dist/images/global/wait_transparent.gif', alt='Please wait...')
+          .domainSearchResultContainer(style='width: 798px; border-width: 0px; margin-left: 0px; margin-top: 0px; display: none;')

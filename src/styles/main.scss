@@ -139,3 +139,39 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
+.domain--search-status {
+  padding: 20px 30px;
+  max-width: 1500px;
+  max-height: 110px;
+  background-color: #F7F7F7;
+  border-radius: 4px;
+  position: relative;
+}
+
+.domain--search-status > h2.domain--search-status__header {
+  margin: 10px 0 6px 0 !important;
+}
+
+.domain--search-status > span.status {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url('../images/signup/occupied-icon.svg') no-repeat;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+.domain--search-status #domain_move_back {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 35px;
+  height: 50px;
+}
+
+.domain--search-status__text {
+  display: inline-block;
+  padding-bottom: 30px;
+}

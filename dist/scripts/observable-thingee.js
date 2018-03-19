@@ -23,12 +23,6 @@ const allTld = [".com",".ca",".net",".org",".me",".nl",".one",".academy",".accou
 let userDomain;
 let userMatch = /.*(?=\.)/;
 
-const domainOccupied = `
-<div class="result--unavailable-domain">
-<h1>Boo!</h1>
-</div>
-`
-
 const changeType = `
 <div class="change_type">
     <button class="domain_type_btn domainsearch-btn--suggestions active_search_btn" data-cattype="2" data-bind="click: domainSearch.setCatType, css: {active_search_btn: domainSearch.isSelecetedCatType(2)}">
@@ -46,6 +40,16 @@ const changeType = `
 </div>
 `
 
+const domainOccupied = `
+<div class="domain--search-status"><span class="status"></span>
+<h2 class="domain--search-status__header">one.com is occupied</h2>
+<p class="domain--search-status__text">If you own this domain, we can transfer it for you so you can attach a One.com web space to it.</p>
+<div class="domain--search-status__buttons">
+    <input class="btn blue" id="domain_move_back" name="back" value="This is my domain" type="submit">
+</div>
+</div>
+`
+
 domainSearchInput.filter(event => event.target.value.length > 6)
   .map(event => event.target.value)
   .subscribe(value => userDomain = value);
@@ -56,13 +60,16 @@ domainSearchBtn
   .map(event => event.preventDefault())
   .subscribe( () => {
   	if (userDomain == 'one.com') {
-  	  result.innerHTML = changeType
+  	  result.innerHTML = domainOccupied + changeType
   	} else {
-  	  result.innerHTML = `<h2>These domains are available</h2><span>Annual fee in EUR</span>` + allTld.map( tld => `
+  	  result.innerHTML = 
+  	    `<h2>These domains are available</h2><span>Annual fee in EUR</span>` +
+  	  	allTld.map( tld => `
   	  	<div class="price-list__row">
   	  	  <span class="status"></span>
   	  	  <div class="price-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
   	  	  <div class="price-list__price-info"><span class="price-list--promo">1st year free <em>20.00</em></span></div>
-  	  	</div>`).join(' ') + changeType
+  	  	</div>`).join(' ') + 
+  	  	changeType
   	}
   });
