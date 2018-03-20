@@ -77,8 +77,23 @@ domainSearchBtn
   	    <hr class="divider">
   	  </div>`).join(' ') +
   	  changeType
+  	  
   	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
-  	  selectTld.map(event => {
+	  const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
+  	  
+  	  selectTldSearch.first().subscribe( () => {
+  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
+  	  	const searchNav = document.getElementsByClassName('order-domain-search')[0]
+  	  	const searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
+  	  	
+  	  	searchNav.style.width = '959px';
+  	  	searchNav.style.display = 'inline-block';
+  	  	searchNav.style.marginBottom = '-20px';
+  	  	searchNavBorder.style.border = 'none';
+  	  	searchNav.insertAdjacentHTML("afterend", orderStep1);
+  	  })
+
+  	  selectTld.subscribe(event => {
   	  	const orderSelected = `<span class="checked"></span><input class="domain--tld-select" value="Remove" type="submit">`
   	  	event.target.insertAdjacentHTML("afterend", orderSelected);
   	  	event.target.attributes[1].value = "Selected"
@@ -86,22 +101,8 @@ domainSearchBtn
   	  	event.target.style.border = 'none'
   	  	event.target.style.color = '#4e4e4e'
   	  	event.preventDefault()
-
-  	  }).subscribe( () => {
-  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
-  	  	let searchNav = document.getElementsByClassName('order-domain-search')[0]
-  	  	let searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
-  	  	
-  	  	searchNav.style.width = '959px';
-  	  	searchNav.style.display = 'inline-block';
-  	  	searchNav.style.marginBottom = '-20px';
-  	  	searchNavBorder.style.border = 'none';
-
-  	  	searchNav.insertAdjacentHTML("afterend", orderStep1);
-  	  
-  	  	console.log(selectTld)
-
   	  })
+
   	} else {
   	  result.innerHTML = 
   	    `<h2>These domains are available</h2><span>Annual fee in EUR</span>` +
