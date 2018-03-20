@@ -12,7 +12,7 @@
 // myData$
 //     .catch(err => console.log('Observable.ajax error', err))
 //     .subscribe(res => console.log('Observable.ajax', res))
-
+console.clear();
 
 const domainSearchInput = Rx.Observable.fromEvent(document.querySelector('#kasper--input-border'), 'input');
 const heading = document.querySelector('#innercontent');
@@ -78,9 +78,10 @@ domainSearchBtn
   	  </div>`).join(' ') +
   	  changeType
   	  
+      //SELECT BUTTONS
   	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
-	  const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
-  	  
+	    const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.suggested-domain--select'), 'click');
+
   	  selectTldSearch.first().subscribe( () => {
   	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
   	  	const searchNav = document.getElementsByClassName('order-domain-search')[0]
@@ -94,6 +95,8 @@ domainSearchBtn
   	  })
 
   	  selectTld.subscribe(event => {
+        let prev = event.target.parentElement.innerHTML;
+
   	  	const orderSelected = `<span class="checked"></span><input class="domain--tld-select" value="Remove" type="submit">`
   	  	event.target.insertAdjacentHTML("afterend", orderSelected);
   	  	event.target.attributes[1].value = "Selected"
@@ -101,6 +104,14 @@ domainSearchBtn
   	  	event.target.style.border = 'none'
   	  	event.target.style.color = '#4e4e4e'
   	  	event.preventDefault()
+
+        //REMOVE BUTTONS
+        const removeTld = Rx.Observable.fromEvent(document.querySelectorAll('input[value="Remove"]'), 'click');
+        
+        removeTld.subscribe( (e) => {
+          e.target.parentElement.innerHTML = prev;
+          console.log(prev)
+        })
   	  })
 
   	} else {
