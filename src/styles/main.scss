@@ -290,6 +290,7 @@ span.checked {
 
 .buycustomer__addon__domain {
   padding: 20px;
+  border-bottom: 1px solid #d4f0fe;
 }
 
 .order--extra-features {
@@ -352,7 +353,24 @@ span.checked {
   float: right;
 }
 
-input#checkboxDomainPrivacy + label > span:first-of-type {
+.order--details-summary {
+  padding: 30px;
+}
+
+.order--details-summary > p {
+  padding: 3px 0;
+}
+
+.order--details-summary > p > em {
+  text-align: right;
+  float: right;
+}
+
+.order--details-summary > p:last-child, .order--details-summary > p:last-child > em:last-child {
+  font-weight: bold;
+}
+
+input.checkboxDomainPrivacy + label > span:first-of-type {
   margin-top: 4px;
   margin-right: -10px;
   background-image: none;
@@ -363,7 +381,7 @@ input#checkboxDomainPrivacy + label > span:first-of-type {
   background-color: #fff;
 }
 
-input#checkboxDomainPrivacy:checked + label > span:first-of-type {
+input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   background: url("../images/signup/checkmark-small.svg") no-repeat;
   background-size: contain;
   width: 14px; 
