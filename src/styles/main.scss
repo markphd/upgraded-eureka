@@ -366,8 +366,15 @@ span.checked {
   border-bottom: 2px solid #efefef;
 }
 
-.order--match-item button {
+.order--extra-add button, .order--match-item button {
   margin-right: 20px;
+  height: 32px;
+  width: 58px;
+  border-radius: 4px;
+  background-color: #2B4A58;
+  color: #fff;
+  font-weight: bold;
+  border: none;
 }
 
 .order--match-item em:last-child {

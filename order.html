@@ -1362,13 +1362,13 @@
           <div class="order--details-product">
             <h3 class="box-header">Review your basket</h3>
             <div class="buycustomer__addon__domain">
-              <input id="checkboxAddon-1" data-bind="attr: { id: 'checkboxAddon-' + $index() }, event: { change: $root.order.addonDomains.add.bind($data) }" data-ref="addon-toggle" type="checkbox"/>
+              <input id="checkboxAddon-1" data-bind="attr: { id: 'checkboxAddon-' + $index() }, event: { change: $root.order.addonDomains.add.bind($data) }" data-ref="addon-toggle" type="checkbox" checked="checked"/>
               <label data-bind="attr: { for: 'checkboxAddon-' + $index() }" for="checkboxAddon-1"><span></span><span class="domain-label" data-bind="text: domain">markphd.one</span><span class="right" data-bind="css: { 'has-rebate': rebate }"><span class="rebate-label" data-bind="visible: rebate, text: rebateLabel" style="display: none;"></span><span class="price-label" data-bind="css: { 'price-label__line-through': rebate }">
                     <!-- ko if: useDisplayPrice-->
                     <!-- /ko-->
                     <!-- ko if: !useDisplayPrice-->
                     <!-- ko text: registrationPriceExcludingVat-->
-                    <button>Shit 💩</button>
+                    <div class="current-package product-hosting-bg active" data-bind="click: $root.packageList.togglePackageDropdown.bind($data), css: $root.packageList.chosenPackage().bgColor"><span data-bind="text: $root.packageList.dropdownBtnTitle, visible: $root.packageList.dropdownBtnTitle">Hosting Professional</span><span class="burger"><span></span><span></span><span></span></span></div>
                     <!-- /ko-->
                     <!-- /ko--></span></span></label><span class="order--details-feat">Hosting Starter (25 GB) - 12 months   <em>240.00</em></span><span class="order--details-feat">Domain fee - first 12 months (.cc)  <em>150.00</em></span><span class="order--details-feat">Setup fee   <em>115.00</em></span>
               <input id="checkboxDomainPrivacy" type="checkbox" name="checkboxDomainPrivacy"/>
@@ -1381,7 +1381,7 @@
                     <!-- /ko-->
                     <!-- ko if: !useDisplayPrice-->
                     <!-- ko text: registrationPriceExcludingVat-->
-                    <button>Shit 💩</button>
+                    <div class="current-package product-hosting-bg active" data-bind="click: $root.packageList.togglePackageDropdown.bind($data), css: $root.packageList.chosenPackage().bgColor"><span data-bind="text: $root.packageList.dropdownBtnTitle, visible: $root.packageList.dropdownBtnTitle">Business</span><span class="burger"><span></span><span></span><span></span></span></div>
                     <!-- /ko-->
                     <!-- /ko--></span></span></label><span class="order--details-feat">Hosting Starter (25 GB) - 12 months   <em>240.00</em></span><span class="order--details-feat">Domain fee - first 12 months (.cc)  <em>150.00</em></span><span class="order--details-feat">Setup fee   <em>115.00</em></span>
               <input class="checkboxDomainPrivacy" type="checkbox" name="checkboxDomainPrivacy2"/>

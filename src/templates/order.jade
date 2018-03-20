@@ -693,7 +693,7 @@ block content
         .order--details-product
           h3.box-header Review your basket
           .buycustomer__addon__domain
-            input#checkboxAddon-1(data-bind="attr: { id: 'checkboxAddon-' + $index() }, event: { change: $root.order.addonDomains.add.bind($data) }", data-ref='addon-toggle', type='checkbox')
+            input#checkboxAddon-1(data-bind="attr: { id: 'checkboxAddon-' + $index() }, event: { change: $root.order.addonDomains.add.bind($data) }", data-ref='addon-toggle', type='checkbox' checked='checked')
             label(data-bind="attr: { for: 'checkboxAddon-' + $index() }", for='checkboxAddon-1')
               span
               span.domain-label(data-bind='text: domain') markphd.one
@@ -704,7 +704,13 @@ block content
                   // /ko
                   // ko if: !useDisplayPrice
                   // ko text: registrationPriceExcludingVat
-                  button Shit 💩
+                  .current-package.product-hosting-bg.active(data-bind='click: $root.packageList.togglePackageDropdown.bind($data), css: $root.packageList.chosenPackage().bgColor')
+                    span(data-bind='text: $root.packageList.dropdownBtnTitle, visible: $root.packageList.dropdownBtnTitle') Hosting Professional
+                    span.burger
+                      span
+                      span
+                      span
+
                   // /ko
                   // /ko
             span.order--details-feat Hosting Starter (25 GB) - 12 months   <em>240.00</em>
@@ -726,7 +732,13 @@ block content
                   // /ko
                   // ko if: !useDisplayPrice
                   // ko text: registrationPriceExcludingVat
-                  button Shit 💩
+                  .current-package.product-hosting-bg.active(data-bind='click: $root.packageList.togglePackageDropdown.bind($data), css: $root.packageList.chosenPackage().bgColor')
+                    span(data-bind='text: $root.packageList.dropdownBtnTitle, visible: $root.packageList.dropdownBtnTitle') Business
+                    span.burger
+                      span
+                      span
+                      span
+
                   // /ko
                   // /ko
             span.order--details-feat Hosting Starter (25 GB) - 12 months   <em>240.00</em>
