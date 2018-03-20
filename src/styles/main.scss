@@ -344,14 +344,47 @@ span.checked {
   margin-left: 2%;
 }
 
-.order--match-items {
-
+.order--match-available span {
+  margin-top: -5px;
+  float: right;
+  height: 30px;
+  width: 30px;
+  background-color: #EFEFEF;
+  border-radius: 50%;
+  color: #B2B2B2;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
 }
 
+.order--match-items {
+  padding: 20px;
+}
 
+.order--match-item {
+  padding: 20px 0;
+  border-bottom: 2px solid #efefef;
+}
+
+.order--match-item button {
+  margin-right: 20px;
+}
+
+.order--match-item em:last-child {
+  float: right;
+}
 
 .order--match-search {
+  padding: 20px;
+}
 
+input#match-search {
+  width: 480px;
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  box-shadow: none;
+  border: 1px solid #ccc;
 }
 
 .order--details-product {
