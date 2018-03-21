@@ -597,6 +597,20 @@ input#match-search {
   float: right;
 }
 
+.addon--privacy-info:after {
+  content: 'Your personal information are not protected!';
+  position: absolute;
+  top: 0;
+  left: 260px;
+  box-sizing: border-box;
+  height: 29px;
+  width: 313px;
+  border: 1px solid #FFC5C5;
+  background-color: #FFF2F2;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
 .order--details-summary {
   margin-top: 20px;
   border-top: 1px solid #d4f0fe;
