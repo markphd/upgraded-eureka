@@ -64,6 +64,14 @@ addExtraStream.subscribe( (event) => {
 // orderStream.map( (value)=> console.log(value) )
 const orderSteps = Rx.Observable.fromEvent(document.querySelector('.order--steps-next'), 'click');
 
+var inc = orderSteps.map( () => state => Object.assign({}, state, {count: state.count + 1 }) )
+
+var state = inc.scan((state, changeFn) => changeFn(state), {count: 0});
+
+state.subscribe( (state) => {
+    document.querySelector('.contentintro-content').innerHTML = state.count;
+})
+
 const orderStep1 = Rx.Observable.fromEvent(document.querySelector('.order--step-product'), 'click');
 
 const orderStep2 = Rx.Observable.fromEvent(document.querySelector('.order--step-customer'), 'click');
@@ -170,3 +178,6 @@ function basketLoader() {
 
 
 basketLoader()
+
+
+
