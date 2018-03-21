@@ -552,6 +552,8 @@ span.checked {
   padding: 20px;
 }
 
+span.package--selector { position: relative; padding: 0 8px; line-height: 28px; }
+
 input#match-search {
   width: 480px;
   display: block;
@@ -596,6 +598,8 @@ input#match-search {
 }
 
 .order--details-summary {
+  margin-top: 20px;
+  border-top: 1px solid #d4f0fe;
   padding: 30px;
 }
 
