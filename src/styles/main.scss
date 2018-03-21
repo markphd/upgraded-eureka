@@ -355,6 +355,65 @@ span.checked {
 }
 
 // ORDER PAGE
+#nav--order-steps {
+  min-height: 100px;
+  height: 100px;
+  margin: 20px 30px;
+}
+
+.order--steps-nav {
+  height: 67px;
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.active {
+  border-bottom: 2px solid #74A345;
+}
+
+.order--step-product, .order--step-customer, .order--step-checkout, .order--step-completed {
+  width: 25%;
+  padding-left: 5%;
+  float: left;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.order--step-product > span {
+  background: url('../images/signup/1-product.svg') no-repeat;
+  background-position: left center;
+  margin: 20px 15px;
+  padding-left: 25px;
+  display: inline-block;
+}
+
+.order--step-customer > span {
+  background: url('../images/signup/2-customer.svg') no-repeat;
+  background-position: left center;
+  margin: 20px 15px;
+  padding-left: 25px;
+  display: inline-block;
+}
+
+.order--step-checkout > span {
+  background: url('../images/signup/3-checkout.svg') no-repeat;
+  background-position: left center;
+  margin: 20px 15px;
+  padding-left: 25px;
+  display: inline-block;
+}
+
+.order--step-completed > span {
+  background: url('../images/signup/4-complete.svg') no-repeat;
+  background-position: left center;
+  margin: 20px 15px;
+  padding-left: 25px;
+  display: inline-block;
+}
 
 .buycustomer__addon__domain {
   padding: 20px;

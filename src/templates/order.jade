@@ -684,12 +684,22 @@ block content
       sizeObject.currentSize = 'smallnew';
       }
     .contentintro.order.container-fluid.mg-bottom-10
-      .mg-top-30
-      .buycustomer__space-selection
-        input#txtDomainSingle(value='The domain is selected', type='hidden')
-        input#txtDomainMultiple(value='null domains are selected', type='hidden')
+      #nav--order-steps
+        .order--steps-nav
+          .order--step-product
+            span
+              | 1. Product
+          .order--step-customer
+            span
+              | 2. Customer Info
+          .order--step-checkout
+            span
+              | 3. Checkout
+          .order--step-completed
+            span
+              | 4. Completed
+      
       .contentintro-content
-        
         .order--details-product
           h3.box-header Review your basket
           .buycustomer__addon__domain
@@ -1102,6 +1112,4 @@ block content
                   |  All rights reserved
     
     script(src='dist/scripts/order.js')
-    script(type='text/javascript').
-      window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"b7ed386b69","agent":"","beacon":"bam.nr-data.net","applicationTime":1264,"applicationID":"42314696,42163859","transactionName":"Z1RRY0FXCENUU0xRV14eYENBQxJDdFNMUVdeHldcHVQJXlAeSEpXWlRQQ0AYFVlBVRZSClVUHUBWVAdARR5LTEpFRUAZXEQCVUceWVtMWV5dGXxEAlVHcVtMUV9f","queueTime":0}
-    .ui-helper-hidden-accessible(role='log', aria-live='assertive', aria-relevant='additions')
+    
