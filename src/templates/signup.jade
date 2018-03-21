@@ -5,7 +5,7 @@ block content
     h1 Find your perfect domain name
     .choose-domain__search-wrapper
       .choose-domain__search
-        form#domainSearchForm(name='customerRegistrantForm', method='post', action='/en/order')
+        form#domainSearchForm(name='customerRegistrantForm', method='get', action='/order.html')
           input(name='csrft', value='803dc6504f4a90bc2514da98e78c52a5', type='hidden')
           .order-domain-search
             div.domain--search-divider
@@ -1833,3 +1833,5 @@ block content
           .domain--list-more
             | View more domains
         script(src='dist/scripts/observable-thingee.js')
+    #kasper--suggest-list
+        
