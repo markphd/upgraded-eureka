@@ -89,7 +89,7 @@ domainSearchBtn
 	    const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
 
   	  selectTldSearch.first().subscribe( () => {
-  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit" onClick=>`
+  	  	const orderStep1 = `<input name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit">`
   	  	const searchNav = document.getElementsByClassName('order-domain-search')[0]
   	  	const searchNavBorder = document.getElementsByClassName('domain--search-divider')[0]
   	  	

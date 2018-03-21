@@ -686,19 +686,21 @@ block content
     .contentintro.order.container-fluid.mg-bottom-10
       #nav--order-steps
         .order--steps-nav
-          .order--step-product
+          .order--step-product.step-active
             span
               | 1. Product
-          .order--step-customer
+          .order--step-customer.step-inactive
             span
               | 2. Customer Info
-          .order--step-checkout
+          .order--step-checkout.step-inactive
             span
               | 3. Checkout
-          .order--step-completed
+          .order--step-completed.step-inactive
             span
               | 4. Completed
-      
+        .order--steps-next
+          input(name="changeSize" id="btnToCheckout" class="btn purple domain_checkout_btn" value="Continue" style="height: 56px; width: 161px;" type="submit")
+
       .contentintro-content
         .order--details-product
           h3.box-header Review your basket

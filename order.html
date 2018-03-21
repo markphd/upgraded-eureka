@@ -1355,10 +1355,13 @@
       <div class="contentintro order container-fluid mg-bottom-10">
         <div id="nav--order-steps">
           <div class="order--steps-nav">
-            <div class="order--step-product"><span>1. Product</span></div>
-            <div class="order--step-customer"><span>2. Customer Info</span></div>
-            <div class="order--step-checkout"><span>3. Checkout</span></div>
-            <div class="order--step-completed"><span>4. Completed</span></div>
+            <div class="order--step-product step-active"><span>1. Product</span></div>
+            <div class="order--step-customer step-inactive"><span>2. Customer Info</span></div>
+            <div class="order--step-checkout step-inactive"><span>3. Checkout</span></div>
+            <div class="order--step-completed step-inactive"><span>4. Completed</span></div>
+          </div>
+          <div class="order--steps-next">
+            <input class="btn purple domain_checkout_btn" name="changeSize" id="btnToCheckout" value="Continue" style="height: 56px; width: 161px;" type="submit"/>
           </div>
         </div>
         <div class="contentintro-content">
