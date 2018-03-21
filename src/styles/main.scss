@@ -597,8 +597,11 @@ input#match-search {
   float: right;
 }
 
-.addon--privacy-info:after {
-  content: 'Your personal information are not protected!';
+.addon--info-wrapper {
+  position: relative;
+}
+
+.addon--privacy-info {
   position: absolute;
   top: 0;
   left: 260px;

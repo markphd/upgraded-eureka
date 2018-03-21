@@ -6,7 +6,7 @@ const orderBasket = [
     {
         domain: "forup.dk",
         package: "Starter",
-        addons: ["webshop", "sitelock"],
+        addons: [],
         price: 0
     },
     {
@@ -46,12 +46,15 @@ const orderStream = Rx.Observable.of(orderBasket) // Stream of order activities
 const addExtraStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--extra-select'), 'click');
 const addDomainStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--domain-select'), 'click');
 
-const subject = new Rx.Subject();
+const subject = new Rx.Subject(orderBasket);
 
-addExtraStream.subscribe( (event) => {
-    () => { for(i in orderBasket){
-        subject.next(orderBasket[i].addons.push(event.target.value))
-    }}
+addExtraStream.subscribe( (event) => { 
+
+        for(i in orderBasket) {
+        // subject.next(orderBasket[i].addons.push(event.target.value))
+        orderBasket[i].addons.push(event.target.value)
+        }
+    
     basketLoader()
 })
 
@@ -59,7 +62,7 @@ addExtraStream.subscribe( (event) => {
 
 // subject.subscribe( (value) => console.log(value) )
 // orderStream.map( (value)=> console.log(value) )
-
+const orderSteps = Rx.Observable.fromEvent(document.querySelector('.order--steps-next'), 'click');
 
 const orderStep1 = Rx.Observable.fromEvent(document.querySelector('.order--step-product'), 'click');
 
@@ -80,9 +83,9 @@ const orderStep4 = Rx.Observable.fromEvent(document.querySelector('.order--step-
 //  }
 // })
 
-// orderStep1.subscribe( (event) => {
-
-// })
+orderSteps.subscribe( (event) => {
+    console.log(event.target)
+})
 
 orderStep2.subscribe( (event) => {
     let el = event.target;
@@ -142,16 +145,27 @@ function basketLoader() {
             <span class="order--details-feat">Domain fee - first 12 months (.cc)  <em>150.00</em></span>
             <span class="order--details-feat">Setup fee   <em>115.00</em></span>
             
-            <div id="order--addons-list">
-                <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
-                <label for="${order.domain}Privacy" class="addon--privacy-info">
-                <span></span>
-                <span class="domain-label">Domain Privacy - 12 months</span>
-                </label>
-            </div>
+            <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
+            <label for="${order.domain}Privacy" class="addon--info-wrapper">
+            <span></span>
+            <span class="domain-label">Domain Privacy - 12 months</span>
+            <em class="addon--privacy-info">Your personal information are not protected!</em>
+            </label>
+            <div class="order--addons-list"></div>
         </div>
         `
     ).join(' ')
+
+    let addonList = document.querySelectorAll('.order--addons-list');
+
+    addonList.forEach( list => {
+        for (i in orderBasket) {
+            orderBasket[i].addons.map((service) => {
+                list.insertAdjacentHTML("afterend", service);
+            })
+        }
+    })
+
 }
 
 
