@@ -1,5 +1,125 @@
 console.clear()
 
+let customerRegFormNew = `
+    <form name="customerRegistrantForm" method="post" action="https://www.one.com/en/order" class="noscript customerForm" id="customerRegistrantForm" novalidate="">
+        <input name="csrft" value="3344e2c552995ef7d0574db555e5745f" type="hidden">
+
+        <h2 class="mg-bottom-20">Customer information</h2>
+
+        <input name="locale" value="en" type="hidden">
+        <input name="domainName" value="my-mark" autocomplete="off" style="" type="hidden">
+
+        <input name="domainSuffix" value=".me" type="hidden">
+
+        <input name="size" value="smallnew" type="hidden">
+        <input name="upgradePreviousSize" value="" type="hidden">
+        <input name="webspaceUpgradeToPlus" value="" type="hidden">
+        <input name="idn" value="false" type="hidden">
+        <input name="campaign" value="false" type="hidden">
+        <input name="existingCustomer" value="false" type="hidden">
+        <input name="hideLogOut" value="false" type="hidden">
+
+        <input name="edcKey" value="false" type="hidden">
+        <input name="rebateCouponCode" value="" type="hidden">
+
+        <div class="userContainer hide" style="display: none;">
+            <div class="formFields">
+                <p class="mg-bottom-10"></p>
+                <p class="mg-bottom-30">
+                    &nbsp;-&nbsp;
+                    <a href="#" id="chooseUserOn" data-bind="click: order.user.logOut">change user</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="chooseUserContainer">
+
+            <p class="radio-paragraph">
+                <input name="customerDataTicket" id="existingCustomerOff" value="false" data-bind="click: function() { order.user.logOut(); return true; }" checked="" type="radio">
+                <label for="existingCustomerOff" class="radioLabel">
+                    <span></span> New customer
+                </label>
+            </p>
+
+            <p class="radio-paragraph mg-bottom-20">
+                <input name="customerDataTicket" id="existingCustomerOn" value="true" type="radio">
+                <label for="existingCustomerOn" class="radioLabel">
+                    <span></span> Existing customer
+                </label>
+            </p>
+
+            <div class="formFields">
+
+                <p class="label-input customerTypeContainer" style="">
+                    <label for="customerType">
+                        Customer type:
+                    </label>
+                    <select name="customerType" id="customerType" class="border">
+                        <option value="private" selected="selected">Private customer</option>
+
+                        <option value="organisation_no_vat">Company customer</option>
+                    </select>
+                </p>
+
+                <p class="label-input customerNameContainer" style="">
+                    <label id="labelCustomerName" for="customerName">
+                        Full name:
+                    </label>
+                    <input name="customerName" value="" id="customerName" class="border autofocus" type="text">
+                </p>
+
+                <p class="label-input customerCompanyContainer hide" style="display: none;">
+                    <label id="customerCompanyLabel" for="customerCompany">
+                        Company:
+                    </label>
+                    <input name="customerCompany" value="" id="customerCompany" class="border autofocus" type="text">
+                </p>
+
+                <p class="label-input mg-bottom-5">
+                    <label for="customerEmail" class="labelUsername" style="display: none;">
+                        Email (username):
+                    </label>
+                    <label for="customerEmail" class="labelEmail" style="">Email:</label>
+                    <input autocomplete="on" autocapitalize="off" class="border" id="customerEmail" name="customerEmail" value="" type="email">
+                </p>
+
+                <input name="customerCountry" value="United Arab Emirates" id="customerCountry" type="hidden">
+                <input name="sizeChosenByCustomer" value="true" id="sizeChosenByCustomer" type="hidden">
+                <input id="cfp" name="cfp" value="f83ad76436ee87f3fa7864f4583aebc8" type="hidden">
+
+                <div class="adminUserPasswordContainer" style="display: none;">
+
+                    <p class="label-input mg-bottom-10">
+                        <label for="adminUserPassword">Password:</label>
+                        <input name="adminUserPassword" id="adminUserPassword" class="border" autocomplete="off" type="password">
+                    </p>
+
+                    <p>
+                        <small class="text-italic">Enter your email address and your control panel password. The email address is the contact email address you entered for your web spaces.</small>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="" class="mg-top-15">
+
+            <input name="customerUser" class="btn blue" id="customer_form_customer" value="Next" style="" type="submit">
+
+            <input name="customerLogin" class="btn blue" id="getLegalEntities" value="Next" style="display: none;" type="submit">
+
+            <div class="forgotpassword mg-top-10" style="display: none;">
+
+                <a href="/admin/forgotpassword.do?locale=en" target="_blank">Forgot your password?</a>
+            </div>
+
+        </div>
+
+        <div class="domainSearchResultContainer" style="width: 855px; border-width: 0px; margin-left: 0px; margin-top: 0px; display: none;"></div>
+    </form>
+    
+`
+
 // BASKET - Initial Order List 
 
 const orderBasket = [
@@ -60,6 +180,8 @@ addExtraStream.subscribe( (event) => {
 
 
 
+
+
 // subject.subscribe( (value) => console.log(value) )
 // orderStream.map( (value)=> console.log(value) )
 const orderSteps = Rx.Observable.fromEvent(document.querySelector('.order--steps-next'), 'click');
@@ -74,7 +196,7 @@ state.subscribe( (state) => {
             document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER DETAILS COOL!';
             break;
         case 2:
-            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER DETAILS';
+            document.querySelector('.contentintro-content').innerHTML = customerRegFormNew;
             break;
         case 3:
             document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER PAY';
