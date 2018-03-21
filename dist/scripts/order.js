@@ -69,7 +69,22 @@ var inc = orderSteps.map( () => state => Object.assign({}, state, {count: state.
 var state = inc.scan((state, changeFn) => changeFn(state), {count: 0});
 
 state.subscribe( (state) => {
-    document.querySelector('.contentintro-content').innerHTML = state.count;
+    switch(state.count) {
+        case 1:
+            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER DETAILS COOL!';
+            break;
+        case 2:
+            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER DETAILS';
+            break;
+        case 3:
+            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER PAY';
+            break; 
+        case 4:
+            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER INFO';
+            break;
+        default:
+            alert('exit!')
+    }
 })
 
 const orderStep1 = Rx.Observable.fromEvent(document.querySelector('.order--step-product'), 'click');
