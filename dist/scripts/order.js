@@ -909,64 +909,6 @@ state.subscribe( (state) => {
     }
 })
 
-const orderStep1 = Rx.Observable.fromEvent(document.querySelector('.order--step-product'), 'click');
-
-const orderStep2 = Rx.Observable.fromEvent(document.querySelector('.order--step-customer'), 'click');
-
-const orderStep3 = Rx.Observable.fromEvent(document.querySelector('.order--step-checkout'), 'click');
-
-const orderStep4 = Rx.Observable.fromEvent(document.querySelector('.order--step-completed'), 'click');
-
-// orderStep1.subscribe( (event) => {
-//  let el = event.target;
-//  console.log(el)
-//  if ( el.nodeName === 'SPAN') {
-//      el.parentElement.classList.toggle('step-inactive')
-//      el.parentElement.classList.toggle('step-active')
-//  } else {
-//      return null;
-//  }
-// })
-
-orderSteps.subscribe( (event) => {
-    console.log(event.target)
-})
-
-orderStep2.subscribe( (event) => {
-    let el = event.target;
-    console.log(el)
-    if ( el.nodeName === 'SPAN') {
-        el.parentElement.classList.toggle('step-inactive')
-        el.parentElement.classList.toggle('step-active')
-    } else {
-        return null;
-    }
-})
-
-orderStep3.subscribe( (event) => {
-    let el = event.target;
-    console.log(el)
-    if ( el.nodeName === 'SPAN') {
-        el.parentElement.classList.toggle('step-inactive')
-        el.parentElement.classList.toggle('step-active')
-    } else {
-        return null;
-    }
-})
-
-orderStep4.subscribe( (event) => {
-    let el = event.target;
-    console.log(el)
-    if ( el.nodeName === 'SPAN') {
-        el.parentElement.classList.toggle('step-inactive')
-        el.parentElement.classList.toggle('step-active')
-    } else {
-        return null;
-    }
-})
-
-
-
 // BASKET - Info domain list
 
 function basketLoader() {
@@ -996,20 +938,25 @@ function basketLoader() {
             <span class="domain-label">Domain Privacy - 12 months</span>
             <em class="addon--privacy-info">Your personal information are not protected!</em>
             </label>
-            <div class="order--addons-list"></div>
+            <div class="order--addons-list">
+                ${order.addons.map( (service) => `
+                    <input id="${order.domain}${service}" name="${order.domain}${service}" type="checkbox" checked="checked" />
+                    <label for="${order.domain}${service}" class="addon--info-wrapper">
+                    <span></span>
+                    <span class="domain-label">${service}</span>
+                    </label>
+                ` ).join(' ') }
+            </div>
         </div>
         `
     ).join(' ')
 
-    let addonList = document.querySelectorAll('.order--addons-list');
+    // let addonList = document.querySelectorAll('.order--addons-list');
 
-    addonList.forEach( list => {
-        for (i in orderBasket) {
-            orderBasket[i].addons.map((service) => {
-                list.insertAdjacentHTML("afterend", service);
-            })
-        }
-    })
+    // addonList.forEach( list => {
+    //     const addOns = orderBasket.map( item => item.addons.map(  ) )
+    //     list.insertAdjacentHTML("afterend", addOns)
+    // })
 
 }
 
