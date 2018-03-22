@@ -439,6 +439,12 @@ span.checked {
   display: inline-block;
 }
 
+.order--step-customer-form {
+  padding: 30px;
+  width: 700px;
+}
+
+
 .order--step-checkout > span {
   background: url('../images/signup/3-checkout.svg') no-repeat;
   background-position: left center;
@@ -652,5 +658,20 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 }
 
 
+#customerRegistrantForm:before {
+  content: '';
+  position: absolute;
+  background-color: #F7FCFF;
+  height: 100%;
+  diplay: block;
+  width: 50%;
+  z-index: -1;
+  padding: -30px;
+}
 
-
+#customerRegistrantForm {
+  padding-left: 20px;
+  display: block;
+  margin: 10px;
+  height: 1500px;
+}
