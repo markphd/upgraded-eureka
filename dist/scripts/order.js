@@ -1,4 +1,4 @@
-console.clear()
+// console.clear()
 
 let customerRegFormNew = `
     <div class="contentintro-content">
@@ -687,7 +687,6 @@ let customerNewInputs = `
             <label for="ownerIdenticalNo" id="ownerIdenticalNoLabel"><span></span>No</label>
         </p>
     </div>
-
 `
 
 let customerExistInputs = `
@@ -767,7 +766,6 @@ let customerExistInputs = `
                                 </div>
 `
 
-
 // BASKET - Initial Order List 
 
 const orderBasket = [
@@ -796,12 +794,12 @@ const orderBasket = [
 const scrollStream = Rx.Observable.fromEvent(window, 'scroll');
 
 scrollStream.debounceTime(10).subscribe( (value) => {
-    console.log(value, "value Y")
-    console.log(document.body.scrollTop, "Chrome Y")
+    // console.log(value, "value Y")
+    // console.log(document.body.scrollTop, "Chrome Y")
     let stickyNav = document.querySelector('#nav--order-steps');
     if(value.pageY >= 150 || document.body.scrollTop >= 150 ){
         stickyNav.classList.add('fixed')
-        console.log(stickyNav)
+        // console.log(stickyNav)
     } else {
         stickyNav.classList.remove('fixed')
     }
@@ -809,7 +807,6 @@ scrollStream.debounceTime(10).subscribe( (value) => {
 
 // BASKET - Add/Remove Order in Basket
 
-const orderStream = Rx.Observable.of(orderBasket) // Stream of order activities
 
 // Add order & extra add-ons
 const addExtraStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--extra-select'), 'click');
@@ -831,8 +828,9 @@ addExtraStream.subscribe( (event) => {
 
 
 
-// subject.subscribe( (value) => console.log(value) )
-// orderStream.map( (value)=> console.log(value) )
+
+
+
 const orderSteps = Rx.Observable.fromEvent(document.querySelector('.order--steps-next'), 'click');
 
 var inc = orderSteps.map( () => state => Object.assign({}, state, {count: state.count + 1 }) )
@@ -934,7 +932,7 @@ function basketLoader() {
             
             <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
-            <span></span>
+            <span class="addon--privacy-checkbox"></span>
             <span class="domain-label">Domain Privacy - 12 months</span>
             <em class="addon--privacy-info">Your personal information are not protected!</em>
             </label>
@@ -956,6 +954,40 @@ function basketLoader() {
     // addonList.forEach( list => {
     //     const addOns = orderBasket.map( item => item.addons.map(  ) )
     //     list.insertAdjacentHTML("afterend", addOns)
+    // })
+
+    const domainPrivacyClick = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-checkbox'), 'click');
+
+    // console.log(domainPrivacyClick)
+
+    // subject.subscribe( (value) => console.log(value) )
+    domainPrivacyClick
+        .map(e => {
+            if (e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!') {
+                e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information will be protected!';
+                e.target.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
+
+            } else {
+                e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information are not protected!'
+                e.target.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
+            }
+        })
+        .pairwise()
+        .subscribe( pair => console.log(pair) )
+
+    // var domainPrivacyActivate = domainPrivacyClick.map( () => stateX => Object.assign({}, stateX, { display: stateX.display == true ? false : true }) )
+
+    // var privacyState = domainPrivacyActivate.scan((stateX, changePr) => changePr(stateX), { display: false });
+
+    // privacyState.subscribe( (stateX) => {
+
+    //     switch(stateX.display) {
+    //         case false:
+    //             document.querySelector('.contentintro-content').innerHTML = customerRegFormNew;
+    //             break;
+    //         default:
+    //             console.log('default value')    
+    //     }
     // })
 
 }

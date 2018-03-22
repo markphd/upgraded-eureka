@@ -618,6 +618,60 @@ input#match-search {
   background-color: #FFF2F2;
   font-size: 13px;
   padding-left: 10px;
+  border-radius: 4px;
+}
+
+.addon--privacy-info:before {
+  content: '';
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-right: 5px solid #FFC5C5;
+  position: absolute;
+  top: 9px;
+  left: -11px;
+  display: block;
+  background-color: #fff;
+}
+
+.addon--privacy-info:after {
+  content: '?';
+  background-color: #FF7F7F;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+  color: #efefef;
+}
+
+.addon--privacy-info.addedPrivacy {
+  border: 1px solid #BAD1A3;
+  background-color: #DCE8D0;
+  width: 308px;
+}
+
+.addon--privacy-info.addedPrivacy:before {
+  border-right: 5px solid #BAD1A3;
+}
+
+.addon--privacy-info.addedPrivacy:after {
+  content: '✓';
+  background-color: #74A345;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  color: #efefef;
 }
 
 .order--details-summary {
