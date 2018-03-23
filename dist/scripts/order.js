@@ -939,9 +939,9 @@ function basketLoader() {
             <div class="order--addons-list">
                 ${order.addons.map( (service) => `
                     <input id="${order.domain}${service}" name="${order.domain}${service}" type="checkbox" checked="checked" />
-                    <label for="${order.domain}${service}" class="addon--info-wrapper">
-                    <span></span>
-                    <span class="domain-label">${service}</span>
+                    <label for="${order.domain}${service}" class="addon--info-wrapper" style="margin-top: -10px;">
+                    <span class="addon--extra-checkbox"></span>
+                    <span class="domain-label">${service} - 12 Months</span>
                     </label>
                 ` ).join(' ') }
             </div>

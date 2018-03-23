@@ -690,14 +690,14 @@ input#match-search {
   color: #efefef;
 }
 
-input[type="checkbox"] + label > span.addon--privacy-checkbox {
+input[type="checkbox"] + label > span.addon--extra-checkbox, input[type="checkbox"] + label > span.addon--privacy-checkbox {
   margin-top: 1px;
   background-image: url('../images/signup/checkbox-unchecked.png');
   background-repeat: no-repeat;
   background-position: center;
 }
 
-input[type="checkbox"]:checked + label > span.addon--privacy-checkbox {
+input[type="checkbox"]:checked + label > span.addon--extra-checkbox, input[type="checkbox"]:checked + label > span.addon--privacy-checkbox {
   margin-top: 1px;
   background-image: url('../images/signup/checkbox-checked.png');
   background-repeat: no-repeat;
