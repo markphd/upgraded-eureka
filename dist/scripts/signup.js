@@ -113,7 +113,7 @@ domainSearchBtn
   	  	  	  <div class="available-list__row">
   	  	  	    <span class="status"></span>
   	  	  	    <div class="available-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
-  	  	  	    <input class="available-domain--select" type="submit" value="Select"></input>
+  	  	  	    <input class="available-domain--select" type="submit" value="Select" readonly="true"></input>
   	  	  	    <div class="available-list__available-info"><span class="available-list--promo">1st year free <em>20.00</em></span></div>
   	  	  	    <br>
   	  	  	    <hr class="divider">
