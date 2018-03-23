@@ -528,7 +528,7 @@ span.checked {
   border-radius: 4px;
   background-color: #D7F0FF;
   display: inline-block;
-  padding: 5px;
+  padding: 7px;
 }
 
 span.free-trial + span {
@@ -688,6 +688,20 @@ input#match-search {
   line-height: 14px;
   text-align: center;
   color: #efefef;
+}
+
+input[type="checkbox"] + label > span.addon--privacy-checkbox {
+  margin-top: 1px;
+  background-image: url('../images/signup/checkbox-unchecked.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:checked + label > span.addon--privacy-checkbox {
+  margin-top: 1px;
+  background-image: url('../images/signup/checkbox-checked.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .addon--privacy-info.addedPrivacy {
