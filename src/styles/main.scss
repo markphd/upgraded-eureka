@@ -580,14 +580,32 @@ input#match-search {
   border: none;
   width: 100%;
   border: 2px solid #D4F0FE;
+  position: relative;
 }
 
 .order--details-product > h3 {
+  height: 90px;
   font-size: 18px;
-  padding: 30px;
+  padding: 33px 30px;
   background-color: #E1F4FF;
   border: 1px solid #d4f0fe;
 }
+
+.order--details-voucher {
+  position: absolute;
+  top: 25px;
+  right: 35px;  
+  height: 41px;
+  width: 243px;
+  border: 1px solid rgba(45,73,88,0.25);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #4E4E4E;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
 
 .order--details-feat {
   display: block;
