@@ -841,7 +841,7 @@ state.subscribe( (state) => {
 
     switch(state.count) {
         case 1:
-            document.querySelector('.contentintro-content').innerHTML = customerRegFormNew;
+            document.querySelector('.order--step-content').innerHTML = customerRegFormNew;
             let customerType = Rx.Observable.fromEvent(document.querySelectorAll('input[name="customerDataTicket"]'), 'click');
             customerType.subscribe( (event) => {
             
@@ -864,7 +864,7 @@ state.subscribe( (state) => {
             })
             break;
         case 2:
-            document.querySelector('.contentintro-content').innerHTML = "Checkout Payment";
+            document.querySelector('.order--step-content').innerHTML = "Checkout Payment";
             
             let orderNavCheckout = document.querySelectorAll('.order--steps-nav > div')
             orderNavCheckout.forEach( el => {
@@ -882,7 +882,7 @@ state.subscribe( (state) => {
             })
             break;
         case 3:
-            document.querySelector('.contentintro-content').innerHTML = 'Completed';
+            document.querySelector('.order--step-content').innerHTML = 'Completed';
             
             let orderNavCompleted = document.querySelectorAll('.order--steps-nav > div')
             orderNavCompleted.forEach( el => {
@@ -900,7 +900,7 @@ state.subscribe( (state) => {
             })
             break; 
         case 4:
-            document.querySelector('.contentintro-content').innerHTML = 'CUSTOMER INFO';
+            document.querySelector('.order--step-content').innerHTML = 'CUSTOMER INFO';
             break;
         default:
             alert('exit!')
@@ -983,7 +983,7 @@ function basketLoader() {
 
     //     switch(stateX.display) {
     //         case false:
-    //             document.querySelector('.contentintro-content').innerHTML = customerRegFormNew;
+    //             document.querySelector('.order--step-content').innerHTML = customerRegFormNew;
     //             break;
     //         default:
     //             console.log('default value')    
