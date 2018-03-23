@@ -393,6 +393,10 @@ span.checked {
   top: 10px;
 }
 
+#nav--order-steps.fixed + #order--step-details {
+  margin-top: 115px;
+}
+
 .order--steps-nav {
   height: 67px;
   width: 85%;
