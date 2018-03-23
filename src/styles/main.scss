@@ -518,6 +518,23 @@ span.checked {
   padding: 20px 10px;
 }
 
+.order--extra-promo > span.free-trial {
+  margin-right: 20px;
+  color: #5BC1FF;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 18px;
+  border-radius: 4px;
+  background-color: #D7F0FF;
+  display: inline-block;
+  padding: 5px;
+}
+
+span.free-trial + span {
+  text-decoration: line-through;
+}
+
 .order--match-available {
   margin-left: 2%;
 }
