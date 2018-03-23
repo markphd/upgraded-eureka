@@ -784,3 +784,80 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   margin: 10px;
   height: 1500px;
 }
+
+.form--order-input {
+  display: inline-block;
+  border: 1px solid #D6D6D6;
+  padding: 10px;
+  margin: 5px 0;
+  background: #FFF;
+  float: right;
+  width: 100%;
+}
+
+.form--label-wrapper {
+  width: 200px;
+  float: left;
+  margin: 15px 0;
+  clear: left;
+}
+
+.form--input-wrapper {
+  width: 400px;
+  display: inline-block;
+  float: right;
+}
+
+#birthdate_day, #birthdate_month, #birthdate_year {
+  width: 130px;
+  float: left;
+  margin: 5px 5px 5px 0;
+}
+
+#birthdate_year {
+  margin-right: 0;
+}
+
+#customerZip, #customerMobileCode {
+  width: 90px;
+  margin-right: 10px;
+  float: left;
+}
+
+#customerCity, #customerMobile {
+  width: 300px;
+  float: left;
+}
+
+.form--owner-type {
+  clear: both;
+  padding-top: 40px;
+}
+
+.order--summary-sidebar {
+  float: left;
+  margin-left: 20px;  
+  width: 430px;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  position: relative;
+}
+
+.order--summary-sidebar > h3 {
+  padding: 33px 30px;
+  border-bottom: 1px solid #efefef;
+}
+
+.order--summary-sidebar > span {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.order--summary-list {
+  padding: 30px;
+}
+
+.order--summary-item {
+  
+}
