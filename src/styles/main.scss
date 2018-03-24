@@ -868,7 +868,6 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 
 #customer--ctrl-action {
   display: none;
-  // display: block;
   position: absolute;
   left: 30px;
   bottom: 0;
@@ -879,6 +878,29 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 #customer--ctrl-prev {
   position: initial;
   display: inline-block;
+}
+
+#customer--ctrl-prev > button {
+  box-sizing: border-box;
+  height: 51px;
+  width: 98px;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+#customer--ctrl-next > button {
+  margin-left: 20px;
+  height: 50px;
+  width: 127px;
+  border-radius: 4px;
+  background-color: #802151;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 #customer--ctrl-next {
@@ -926,7 +948,7 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 
 .order--terms-agree {
   border-top: 2px solid #D7F0FF;
-  padding: 30px;
+  padding: 35px 30px;
 }
 
 .order--checkout-sidepanel {
@@ -937,4 +959,9 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   width: 270px;
   border-radius: 4px;
   background-color: #F9F9F9;
+}
+
+.sidepanel--item {
+  text-align: center;
+  padding: 30px;
 }

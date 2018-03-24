@@ -219,16 +219,16 @@ const checkoutTerms = `
         </p>
 
         <div class="order--terms-agree">
-            <p> I agree that the domain will be registered with DK Hostmaster, and I accept DK Hostmaster’s General conditions for the assignment, registration and administration of .dk domain names. </p>
+            <input id="checkoutTerms"type="checkbox">
+            <label for="checkoutTerms"><span></span><span class="domain-label">I agree that the domain will be registered with DK Hostmaster, and I accept DK Hostmaster’s General conditions for the assignment, registration and administration of .dk domain names.</span>
+            </label>
         </div>
     </div>
     <div class="order--checkout-sidepanel">
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#guarantee"></use>
-                    </svg>
+                    <img src="dist/images/signup/guarantee.png"/>
                 </div>
                 <h2>Risk free 15 days</h2>
                 <p>Money Back Guarantee</p>
@@ -238,27 +238,32 @@ const checkoutTerms = `
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#guarantee"></use>
-                    </svg>
+                    <img src="dist/images/signup/customers.png"/>
                 </div>
-                <h2>Risk free 15 days</h2>
-                <p>Money Back Guarantee</p>
+                <h2>More than 1,500,000</h2>
+                <p>active customers</p>
             </div>
         </div>
 
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#trustpilot-stars"></use>
-                    </svg>
+                    <img src="dist/images/signup/trustpilot.png"/>
                 </div>
                 <h2 class="bold">"Great service"</h2>
-                <img src="/static/images/onecom/sprite-source/trustpilot-logo.svg">
+                <img src="dist/images/onecom/sprite-source/trustpilot-logo.svg">
             </div>
         </div>
 
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <img src="dist/images/signup/support.png"/>
+                </div>
+                <h2>We're open</h2>
+                <p>24 hours a day</p>
+            </div>
+        </div>
     </div>
 `
 
@@ -299,9 +304,7 @@ const checkoutPay = `
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#guarantee"></use>
-                    </svg>
+                    <img src="dist/images/signup/guarantee.png"/>
                 </div>
                 <h2>Risk free 15 days</h2>
                 <p>Money Back Guarantee</p>
@@ -311,24 +314,30 @@ const checkoutPay = `
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#guarantee"></use>
-                    </svg>
+                    <img src="dist/images/signup/customers.png"/>
                 </div>
-                <h2>Risk free 15 days</h2>
-                <p>Money Back Guarantee</p>
+                <h2>More than 1,500,000</h2>
+                <p>active customers</p>
             </div>
         </div>
 
         <div class="sidepanel--item">
             <div>
                 <div class="icon">
-                    <svg>
-                        <use xlink:href="#trustpilot-stars"></use>
-                    </svg>
+                    <img src="dist/images/signup/trustpilot.png"/>
                 </div>
                 <h2 class="bold">"Great service"</h2>
-                <img src="/static/images/onecom/sprite-source/trustpilot-logo.svg">
+                <img src="dist/images/onecom/sprite-source/trustpilot-logo.svg">
+            </div>
+        </div>
+
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <img src="dist/images/signup/support.png"/>
+                </div>
+                <h2>We're open</h2>
+                <p>24 hours a day</p>
             </div>
         </div>
     </div>
@@ -341,6 +350,33 @@ const checkoutPay = `
         <div class="checkout--customer-info">
 
         </div>
+    </div>
+`
+
+const checkoutCompleted = `
+    <div class="checkout--order-complete">
+        <h3>Thank you for choosing one.com</h3>
+        <em>Next up you need to activate your order</em>
+        <p>1. We sent you a link for the activation page to kasperforup@gmail.com</p>
+        <p>2. On the activation page you need to enter the activation code, that we just sent by SMS to +45 42700001.</p>
+        <p>That’s it! When you have entered the activation code, we will start processing your order.</p>
+    </div>
+    <p>If you have not received the SMS message, you can submit a signed form. Further information can be found on the activation page.</p>
+    <hr/>
+    <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperforup@gmail.com.</p>
+    <div class="promo--share-link">
+        <h3>Give $10, Get $25 – Unlimited earnings!</h3>
+        <p>Everyone you refer to One.com, will get a $10 discount on a hosting package – and for each you refer, you will earn $25 – there is no limit to how much you can make.</p>
+        <p>Share your unique referral link below, and for each referral that sign up through your link, you’ll get $25.</p>
+        <hr/>
+        <h3>Share your personal link</h3>
+        <p>Spread the love and discounts using the links below, and start earning!</p>
+        <h3>Your referral link:</h3><span class="share--link-url">http://one.me/enaqydpe</span>
+        <div class="share--link-social">
+            <button>Facebook</button>
+            <button>Twitter</button>
+            <button>Email</button>
+        <div>
     </div>
 `
 
@@ -499,7 +535,7 @@ state.subscribe( (state) => {
             })
             break;
         case 4:
-            document.querySelector('.order--step-content').innerHTML = 'Completed';
+            document.querySelector('.order--step-content').innerHTML = checkoutCompleted;
             
             let orderNavCompleted = document.querySelectorAll('.order--steps-nav > div')
             orderNavCompleted.forEach( el => {
