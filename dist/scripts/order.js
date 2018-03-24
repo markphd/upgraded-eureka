@@ -2,7 +2,7 @@
 
 let customerRegFormNew = `
     <div class="contentintro-content">
-        <div class="order--details-product" style="width: 700px; float: left;">
+        <div class="order--details-product" style="width: 700px; float: left; padding-bottom: 30px;">
             <h3>Enter customer information</h3>
             <form class="order--step-customer-form">
                 <div class="form--type-wrapper">
@@ -273,6 +273,24 @@ var state = Rx.Observable.merge(inc, dec).scan((state, changeFn) => changeFn(sta
 state.subscribe( (state) => {
 
     switch(state.count) {
+        case 0:
+            document.querySelector('.order--step-content').innerHTML = "Product Page";
+            
+            let orderNavProduct = document.querySelectorAll('.order--steps-nav > div')
+            orderNavProduct.forEach( el => {
+                let key = el.className.split(' ')[0] == 'order--step-product';
+                
+                if (key) {
+                    console.log(el, true)
+                    el.classList.remove('step-inactive')
+                    el.classList.add('step-active')
+                } else {
+                    console.log(el, false)
+                    el.classList.remove('step-active')
+                    el.classList.add('step-inactive')
+                }
+            })
+            break;
         case 1:
             document.querySelector('#customer--ctrl-action').style.display = "block";
             document.querySelector('.order--step-content').innerHTML = customerRegFormNew + basketSidebar;
@@ -280,8 +298,12 @@ state.subscribe( (state) => {
             let customerType = Rx.Observable.fromEvent(document.querySelectorAll('input[name="customerDataTicket"]'), 'click');
             customerType.subscribe( (event) => {
             
+                let ctrl = document.querySelector('#customer--ctrl-action');
                 let el = event.target.form.lastElementChild;
                 event.target.value == 'true' ? el.innerHTML = customerExistInputs : el.innerHTML = customerNewInputs
+
+                ctrl.style.bottom = '160px';
+
             })
             let orderNavCustomer = document.querySelectorAll('.order--steps-nav > div')
             orderNavCustomer.forEach( el => {
@@ -318,6 +340,24 @@ state.subscribe( (state) => {
             })
             break;
         case 3:
+            document.querySelector('.order--step-content').innerHTML = "Checkout Payment DK Hostmaster's Terms";
+            
+            let orderNavCheckoutA = document.querySelectorAll('.order--steps-nav > div')
+            orderNavCheckoutA.forEach( el => {
+                let key = el.className.split(' ')[0] == 'order--step-checkout';
+                
+                if (key) {
+                    console.log(el, true)
+                    el.classList.remove('step-inactive')
+                    el.classList.add('step-active')
+                } else {
+                    console.log(el, false)
+                    el.classList.remove('step-active')
+                    el.classList.add('step-inactive')
+                }
+            })
+            break;
+        case 4:
             document.querySelector('.order--step-content').innerHTML = 'Completed';
             
             let orderNavCompleted = document.querySelectorAll('.order--steps-nav > div')
@@ -335,7 +375,7 @@ state.subscribe( (state) => {
                 }
             })
             break; 
-        case 4:
+        case 5:
             document.querySelector('.order--step-content').innerHTML = 'CUSTOMER INFO';
             break;
         default:
@@ -385,18 +425,8 @@ function basketLoader() {
         `
     ).join(' ')
 
-    // let addonList = document.querySelectorAll('.order--addons-list');
-
-    // addonList.forEach( list => {
-    //     const addOns = orderBasket.map( item => item.addons.map(  ) )
-    //     list.insertAdjacentHTML("afterend", addOns)
-    // })
-
     const domainPrivacyClick = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-checkbox'), 'click');
 
-    // console.log(domainPrivacyClick)
-
-    // subject.subscribe( (value) => console.log(value) )
     domainPrivacyClick
         .map(e => {
             if (e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!') {
@@ -410,28 +440,9 @@ function basketLoader() {
         })
         .pairwise()
         .subscribe( pair => console.log(pair) )
-
-    // var domainPrivacyActivate = domainPrivacyClick.map( () => stateX => Object.assign({}, stateX, { display: stateX.display == true ? false : true }) )
-
-    // var privacyState = domainPrivacyActivate.scan((stateX, changePr) => changePr(stateX), { display: false });
-
-    // privacyState.subscribe( (stateX) => {
-
-    //     switch(stateX.display) {
-    //         case false:
-    //             document.querySelector('.order--step-content').innerHTML = customerRegFormNew;
-    //             break;
-    //         default:
-    //             console.log('default value')    
-    //     }
-    // })
-
 }
 
-
 basketLoader()
-
-
 
 function basketSidebarLoader() {
     let summaryList = document.querySelector('.order--summary-list');

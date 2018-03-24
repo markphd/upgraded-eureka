@@ -864,21 +864,20 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 
 #customer--ctrl-action {
   display: none;
-  margin-top: 20px;
-  position: relative;
+  // display: block;
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  padding: 30px 0;
+  margin-top: 28px;
 }
 
-// #customer--ctrl-prev {
-
-// }
+#customer--ctrl-prev {
+  position: initial;
+  display: inline-block;
+}
 
 #customer--ctrl-next {
-  display: block;
-  float: left;
-  position: absolute;
-  bottom: 100px;
-  left: 100px;
-  right: 0;
-  // top: 100px;
-
+  position: initial;
+  display: inline-block;
 }
