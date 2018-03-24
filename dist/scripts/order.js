@@ -2,7 +2,7 @@
 
 let customerRegFormNew = `
     <div class="contentintro-content">
-        <div class="order--details-product" style="width: 700px; float: left; padding-bottom: 30px;">
+        <div class="order--details-product" style="width: 700px; float: left; padding-bottom: 80px;">
             <h3>Enter customer information</h3>
             <form class="order--step-customer-form">
                 <div class="form--type-wrapper">
@@ -184,8 +184,7 @@ let customerExistInputs = `
         </div>
     </div>
     <div id="" class="mg-top-15">
-        <div class="forgotpassword mg-top-10" style="">
-
+        <div class="forgotpassword" style="position: absolute; bottom: 30px;">
             <a href="/admin/forgotpassword.do?locale=en" target="_blank">Forgot your password?</a>
         </div>
     </div>
@@ -476,10 +475,19 @@ state.subscribe( (state) => {
             customerType.subscribe( (event) => {
             
                 let ctrl = document.querySelector('#customer--ctrl-action');
-                let el = event.target.form.lastElementChild;
-                event.target.value == 'true' ? el.innerHTML = customerExistInputs : el.innerHTML = customerNewInputs
+                let btnNext = document.querySelector('#customer--ctrl-next > button');
+                let btnPrev = document.querySelector('#customer--ctrl-prev > button');
 
-                ctrl.style.bottom = '160px';
+                let el = event.target.form.lastElementChild;
+                if (event.target.value == 'true') {
+                    el.innerHTML = customerExistInputs
+                    ctrl.style.bottom = '180px';
+                    btnNext.innerHTML = "Sign in"
+                } else {
+                    el.innerHTML = customerNewInputs
+                    ctrl.style.bottom = '0';
+                    btnNext.innerHTML = "Continue"
+                } 
 
             })
             let orderNavCustomer = document.querySelectorAll('.order--steps-nav > div')
