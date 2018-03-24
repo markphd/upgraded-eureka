@@ -201,7 +201,148 @@ const basketSidebar = `
     </div>
 `
 
+const checkoutTerms = `
+    <div class="order--checkout-terms">
+        <h3>DK Hostmaster's conditions</h3>
+        <em> Please be aware of the following conditions: </em>
+        <p> The registration of the domain name takes place with DK Hostmaster with whom One.com has entered into an agreement. You must must therefore accept to be subject to DK Hostmaster’s applicable rules on assignment, registration and administration of .dk domain names (the General Conditions).
+            <br/ style="margin-bottom: 20px;">
+            In order for a domain name to be registered, DK Hostmaster must be able to validate your information.
+            <br/ style="margin-bottom: 20px;">
+            If you are a resident of Denmark, you may be compelled to inform DK Hostmaster of your civil registration (CPR) number and to use NemID in order to be validated.
+            <br/ style="margin-bottom: 20px;">
+            In the validation process, legal persons will be asked to provide the specific and unique information as described in DK Hostmaster’s General Conditions and validation procedures.
+            <br/ style="margin-bottom: 20px;">
+            DK Hostmaster is entitled to reject your application and registration of a domain name if DK Hostmaster is unable to validate your information.
+            <br/ style="margin-bottom: 20px;">
+            The information you have submitted is registered by DK Hostmaster and will be used for administering the .dk top-level domain. The information will be made publicly available via the whois database published by DK Hostmaster, unless you fulfil the anonymity requirements of the whois database. You can read the anonymity requirements in 7.2 of DK Hostmaster’s General Conditions
+        </p>
 
+        <div class="order--terms-agree">
+            <p> I agree that the domain will be registered with DK Hostmaster, and I accept DK Hostmaster’s General conditions for the assignment, registration and administration of .dk domain names. </p>
+        </div>
+    </div>
+    <div class="order--checkout-sidepanel">
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#guarantee"></use>
+                    </svg>
+                </div>
+                <h2>Risk free 15 days</h2>
+                <p>Money Back Guarantee</p>
+            </div>
+        </div>
+        
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#guarantee"></use>
+                    </svg>
+                </div>
+                <h2>Risk free 15 days</h2>
+                <p>Money Back Guarantee</p>
+            </div>
+        </div>
+
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#trustpilot-stars"></use>
+                    </svg>
+                </div>
+                <h2 class="bold">"Great service"</h2>
+                <img src="/static/images/onecom/sprite-source/trustpilot-logo.svg">
+            </div>
+        </div>
+
+    </div>
+`
+
+const checkoutPay = `
+    <div class="order--checkout-pay">
+        <h3>Checkout</h3>
+    
+        <div class="term--checkbox-wrapper">
+          <input id="checkoutTerms"type="checkbox">
+          <label for="checkoutTerms"><span></span><span style="font-weight: bold;" class="domain-label">I agree to below terms:</span>
+          </label>
+          <p>Yes, I have read the terms of business and I agree to these!</p>
+          <p>The domain will be registered with One.com, and I accept the Domain Registration Agreement. </p>
+        </div>
+        <hr/>
+        <div class="checkout--payment-options">
+            <p class="radio-paragraph">
+                <input name="customerDataTicket" id="checkoutCard" value="false" checked="" type="radio" />
+                <label for="checkoutCard" class="radioLabel">
+                    <span></span> Credit/debit card (MasterCard and VISA)
+                </label>
+            </p>
+            <p class="radio-paragraph">
+                <input name="customerDataTicket" id="checkoutLogin" value="true" type="radio" />
+                <label for="checkoutLogin" class="radioLabel">
+                    <span></span> Existing customer
+                </label>
+            </p>
+            <p class="radio-paragraph">
+                <input name="customerDataTicket" id="checkoutPaypal" value="true" type="radio" />
+                <label for="checkoutPaypal" class="radioLabel">
+                    <span></span> Paypal
+                </label>
+            </p>
+        </div>
+    </div>
+    <div class="order--checkout-sidepanel">
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#guarantee"></use>
+                    </svg>
+                </div>
+                <h2>Risk free 15 days</h2>
+                <p>Money Back Guarantee</p>
+            </div>
+        </div>
+        
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#guarantee"></use>
+                    </svg>
+                </div>
+                <h2>Risk free 15 days</h2>
+                <p>Money Back Guarantee</p>
+            </div>
+        </div>
+
+        <div class="sidepanel--item">
+            <div>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#trustpilot-stars"></use>
+                    </svg>
+                </div>
+                <h2 class="bold">"Great service"</h2>
+                <img src="/static/images/onecom/sprite-source/trustpilot-logo.svg">
+            </div>
+        </div>
+    </div>
+    <div class="checkout--order-summary">
+        <p>We care about the safety of your mail, contacts and website. That’s why we automatically renew your web space and debit your credit card when due. You can cancel at any time.</p>
+        <div class="checkout--order-confirmation">
+            <h3>Order confirmation</h3>
+
+        </div>
+        <div class="checkout--customer-info">
+
+        </div>
+    </div>
+`
 
 // BASKET - Initial Order List 
 
@@ -322,7 +463,7 @@ state.subscribe( (state) => {
             basketSidebarLoader()
             break;
         case 2:
-            document.querySelector('.order--step-content').innerHTML = "Checkout Payment";
+            document.querySelector('.order--step-content').innerHTML = checkoutTerms;
             
             let orderNavCheckout = document.querySelectorAll('.order--steps-nav > div')
             orderNavCheckout.forEach( el => {
@@ -340,7 +481,7 @@ state.subscribe( (state) => {
             })
             break;
         case 3:
-            document.querySelector('.order--step-content').innerHTML = "Checkout Payment DK Hostmaster's Terms";
+            document.querySelector('.order--step-content').innerHTML = checkoutPay;
             
             let orderNavCheckoutA = document.querySelectorAll('.order--steps-nav > div')
             orderNavCheckoutA.forEach( el => {

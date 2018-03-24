@@ -397,6 +397,10 @@ span.checked {
   margin-top: 115px;
 }
 
+main {
+  margin-top: 90px;
+}
+
 .order--steps-nav {
   height: 67px;
   width: 85%;
@@ -880,4 +884,57 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 #customer--ctrl-next {
   position: initial;
   display: inline-block;
+}
+
+.order--checkout-terms, .order--checkout-pay {
+  width: 800px;  
+  border: 2px solid #D7F0FF;
+  border-radius: 4px;
+  background-color: #F7FCFF;
+  float: left;
+  padding-bottom: 70px;
+}
+
+.order--checkout-terms > h3, .order--checkout-pay > h3 {
+  height: 91px;
+  border-radius: 4px;
+  background-color: #E1F4FF;
+  padding: 30px;
+}
+
+.order--checkout-terms > em {
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 30px;
+  display: block;
+}
+
+.order--checkout-terms > p {
+  line-height: 1.6em;
+  padding: 30px;
+}
+
+.term--checkbox-wrapper > p {
+  margin-left: 30px;
+  margin-top: 7px;
+}
+
+.term--checkbox-wrapper, .checkout--payment-options {
+  margin-top: 30px;
+  padding: 0 30px;
+}
+
+.order--terms-agree {
+  border-top: 2px solid #D7F0FF;
+  padding: 30px;
+}
+
+.order--checkout-sidepanel {
+  padding: 20px;
+  margin-left: 30px;
+  display: inline-block;
+  float: left;
+  width: 270px;
+  border-radius: 4px;
+  background-color: #F9F9F9;
 }
