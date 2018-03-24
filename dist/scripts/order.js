@@ -184,10 +184,6 @@ let customerExistInputs = `
         </div>
     </div>
     <div id="" class="mg-top-15">
-
-        <input name="customerLogin" class="btn blue" id="getLegalEntities" value="Back" style="" type="submit">
-        <input name="customerLogin" class="btn blue" id="getLegalEntities" value="Sign in" style="" type="submit">
-
         <div class="forgotpassword mg-top-10" style="">
 
             <a href="/admin/forgotpassword.do?locale=en" target="_blank">Forgot your password?</a>
@@ -204,6 +200,8 @@ const basketSidebar = `
       </div>
     </div>
 `
+
+
 
 // BASKET - Initial Order List 
 
@@ -264,25 +262,21 @@ addExtraStream.subscribe( (event) => {
 })
 
 
-
-
-
-
-
-
-const orderStepsNext = Rx.Observable.fromEvent(document.querySelector('.order--steps-next'), 'click');
-const orderStepsPrev = Rx.Observable.fromEvent(document.querySelector('.order--steps-prev'), 'click');
+const orderStepsNext = Rx.Observable.fromEvent(document.querySelectorAll('.order--steps-next'), 'click');
+const orderStepsPrev = Rx.Observable.fromEvent(document.querySelectorAll('.order--steps-prev'), 'click');
 
 var inc = orderStepsNext.map( () => state => Object.assign({}, state, {count: state.count + 1 }) )
 var dec = orderStepsPrev.map( () => state => Object.assign({}, state, {count: state.count - 1 }) )
 
-var state = inc.scan((state, changeFn) => changeFn(state), {count: 0});
+var state = Rx.Observable.merge(inc, dec).scan((state, changeFn) => changeFn(state), {count: 0});
 
 state.subscribe( (state) => {
 
     switch(state.count) {
         case 1:
+            document.querySelector('#customer--ctrl-action').style.display = "block";
             document.querySelector('.order--step-content').innerHTML = customerRegFormNew + basketSidebar;
+            
             let customerType = Rx.Observable.fromEvent(document.querySelectorAll('input[name="customerDataTicket"]'), 'click');
             customerType.subscribe( (event) => {
             

@@ -861,3 +861,24 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 .order--summary-item {
   
 }
+
+#customer--ctrl-action {
+  display: none;
+  margin-top: 20px;
+  position: relative;
+}
+
+// #customer--ctrl-prev {
+
+// }
+
+#customer--ctrl-next {
+  display: block;
+  float: left;
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  right: 0;
+  // top: 100px;
+
+}
