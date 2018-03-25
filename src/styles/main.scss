@@ -992,8 +992,58 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   margin: 10px auto;
 }
 
+.auto--renewal-statement {
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 30px;
+}
+
 .checkout--order-summary {
   width: 781px;
   float: left;
   margin-top: -150px;
+}
+
+.checkout--order-confirmation {
+  margin-top: 40px;
+  border-right: 1px solid #efefef;
+  width: 460px;
+  min-height: 200px;
+  float: left;
+  display: block;
+}
+
+.checkout--confirmation-item {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.checkout--confirmation-item > p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.checkout--confirmation-feat {
+  float: left;
+  clear: both;
+}
+
+#order--checkout-confirmation {
+  width: 470px;
+  float: left;
+  padding: 30px 30px 0 0;
+}
+
+.checkout--customer-info {
+  margin-top: 40px;
+  display: inline-block;
+  padding-left: 30px;
+}
+
+.checkout--customer-info > h3 {
+  margin-bottom: 30px;
+}
+
+.checkout--info-name {
+  font-weight: bold;
+  margin-bottom: 10px;
 }

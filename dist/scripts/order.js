@@ -503,6 +503,8 @@ state.subscribe( (state) => {
             break;
         case 1:
             document.querySelector('#customer--ctrl-action').style.display = "block";
+            document.querySelector('#btnToCheckout').style.display = "none";
+            
             document.querySelector('.order--step-content').innerHTML = customerRegFormNew + basketSidebar;
 
             let ctrlStepCustomer = document.querySelector('#customer--ctrl-action');
@@ -549,6 +551,7 @@ state.subscribe( (state) => {
             break;
         case 2:
             document.querySelector('.order--step-content').innerHTML = checkoutTerms;
+            document.querySelector('#btnToCheckout').style.display = "none";
 
             let ctrlStepCheckoutTerms = document.querySelector('#customer--ctrl-action');
             let ctrlCheckoutTermsBtn = document.querySelector('#customer--ctrl-next > button');
@@ -573,6 +576,9 @@ state.subscribe( (state) => {
             break;
         case 3:
             document.querySelector('.order--step-content').innerHTML = checkoutPay;
+            document.querySelector('#btnToCheckout').style.display = "none";
+
+            orderConfirmationLoader();
             
             let orderNavCheckoutA = document.querySelectorAll('.order--steps-nav > div')
 
@@ -691,7 +697,7 @@ function basketSidebarLoader() {
     let summaryList = document.querySelector('.order--summary-list');
 
     summaryList.innerHTML = orderBasket.map( (order) => `
-        <div class=".order--summary-item">
+        <div class="order--summary-item">
             <input id="${order.domain}" checked="checked" type="checkbox">
             <label for="${order.domain}"><span></span><span class="domain-label">${order.domain}</span>
             </label>
@@ -701,8 +707,25 @@ function basketSidebarLoader() {
             ${order.addons.map( (service) => `
             <span class="order--details-feat">${service}</span>
             ` ).join(' ') }
-            <hr>
+            <hr/>
             
+        </div>
+    `).join(' ')
+}
+
+function orderConfirmationLoader() {
+    let summaryList = document.querySelector('#order--checkout-confirmation');
+
+    summaryList.innerHTML = orderBasket.map( (order) => `
+        <div class="checkout--confirmation-item">
+            <p class="checkout--confirmation-feat" style="font-weight: bold;">${order.domain}</p>
+            <span class="checkout--confirmation-feat">Domain registration - 12 months</span> <em style="float: right">EUR 20.00</em>
+            <span class="checkout--confirmation-feat">Hosting - 0.99/month</span> <em style="float: right">EUR 20.00</em>
+            <span class="checkout--confirmation-feat">Setup fee</span> <em style="float: right">EUR 20.00</em>
+            ${order.addons.map( (service) => `
+            <span class="checkout--confirmation-feat">${service}</span>
+            ` ).join(' ') }
+            <hr style="width: 100%;" class="checkout--confirmation-feat"/>
         </div>
     `).join(' ')
 }
