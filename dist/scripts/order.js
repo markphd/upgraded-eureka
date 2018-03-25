@@ -695,6 +695,99 @@ function basketLoader() {
                         <div class="current-package product-hosting-bg active">
                             <span>${order.package}</span>
                             <span class="package--selector">▾</span>
+                            <div class="package--selector-context">
+                                <div class="context--title">Hosting</div>
+                                <div class="context--details">
+                                    
+                                    <p class="radio-paragraph">
+                                        <input id="${order.domain}starter" value="false" ${order.package != "Starter" ? "" : "checked"} type="radio" />
+                                        <label for="${order.domain}starter" class="radioLabel">
+                                            <span></span> Starter
+                                        </label>
+                                    </p>
+
+                                    <p class="radio-paragraph">
+                                        <input id="${order.domain}professional" ${order.package != "Professional" ? "" : "checked" } value="false" type="radio" />
+                                        <label for="${order.domain}professional" class="radioLabel">
+                                            <span></span> Professional
+                                        </label>
+                                    </p>
+
+                                    <p class="radio-paragraph">
+                                        <input id="${order.domain}professionalplus" ${order.package != "Professional Plus" ? "" : "checked" } value="false" type="radio" />
+                                        <label for="${order.domain}professionalplus" class="radioLabel">
+                                            <span></span> Professional Plus
+                                        </label>
+                                    </p>
+
+                                    <p class="radio-paragraph">
+                                        <input id="${order.domain}business" ${order.package != "Business" ? "" : "checked" } value="false" type="radio" />
+                                        <label for="${order.domain}business" class="radioLabel">
+                                            <span></span> Business
+                                        </label>
+                                    </p>
+
+                                    <button class="package--select-button">Select</button>
+
+                                    <div id="package--selector-feat">
+                                    ${order.package != "Starter" ? "" : `
+                                        <p class="context--price">EUR 1.98/month</p>
+                                        <span class="context--feature available"> Unlimited bandwidth </span>
+                                        <span class="context--feature available"> Easy-to-use Website Builder - up to 5 pages </span>
+                                        <span class="context--feature available"> 25 GB Storage </span>
+                                        <span class="context--feature available"> Single domain </span>
+                                        <span class="context--feature available"> 512 MB RAM </span>
+                                        <span class="context--feature available"> Single database </span>
+                                        <span class="context--feature available"> PHP & FTP/SFTP </span>
+                                        <span class="context--feature available"> Security with SSL </span>
+                                        <span class="context--feature available"> 1 x CPU </span>
+                                        <span class="context--feature not-available"> SSH </span>
+                                        <span class="context--feature not-available"> Backup & Restore </span>`}
+
+                                    ${order.package != "Professional" ? "" : `
+                                        <p class="context--price">EUR 4.00/month</p>
+                                        <span class="context--feature available"> Unlimited bandwidth </span>
+                                        <span class="context--feature available"> Easy-to-use Website Builder - up to 5 pages </span>
+                                        <span class="context--feature available"> 100 GB Storage </span>
+                                        <span class="context--feature available"> Single domain </span>
+                                        <span class="context--feature available"> 1 GB RAM </span>
+                                        <span class="context--feature available"> Multiple databases </span>
+                                        <span class="context--feature available"> PHP & FTP/SFTP </span>
+                                        <span class="context--feature available"> Security with SSL </span>
+                                        <span class="context--feature available"> 2 x CPU </span>
+                                        <span class="context--feature available"> SSH </span>
+                                        <span class="context--feature not-available"> Backup & Restore </span>`}
+
+                                    ${order.package != "Professional Plus" ? "" : `
+                                        <p class="context--price">EUR 5.66/month</p>
+                                        <span class="context--feature available"> Unlimited bandwidth </span>
+                                        <span class="context--feature available"> Easy-to-use Website Builder - up to 5 pages </span>
+                                        <span class="context--feature available"> 200 GB Storage </span>
+                                        <span class="context--feature available"> Single domain </span>
+                                        <span class="context--feature available"> 2 GB RAM </span>
+                                        <span class="context--feature available"> Multiple databases </span>
+                                        <span class="context--feature available"> PHP & FTP/SFTP </span>
+                                        <span class="context--feature available"> Security with SSL </span>
+                                        <span class="context--feature available"> 4 x CPU </span>
+                                        <span class="context--feature available"> SSH </span>
+                                        <span class="context--feature available"> Backup & Restore </span>`}
+
+                                    ${order.package != "Business" ? "" : `
+                                        <p class="context--price">EUR 9.71/month</p>
+                                        <span class="context--feature available"> Unlimited bandwidth </span>
+                                        <span class="context--feature available"> Easy-to-use Website Builder - up to 5 pages </span>
+                                        <span class="context--feature available"> 500 GB Storage </span>
+                                        <span class="context--feature available"> Single domain </span>
+                                        <span class="context--feature available"> 4 GB RAM </span>
+                                        <span class="context--feature available"> Multiple databases </span>
+                                        <span class="context--feature available"> PHP & FTP/SFTP </span>
+                                        <span class="context--feature available"> Security with SSL </span>
+                                        <span class="context--feature available"> 8 x CPU </span>
+                                        <span class="context--feature available"> SSH </span>
+                                        <span class="context--feature not-available"> Backup & Restore </span>`}
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
                     </span>
                 </span>
@@ -778,3 +871,18 @@ function orderConfirmationLoader() {
         </div>
     `).join(' ')
 }
+
+let packageSelectStream = Rx.Observable.fromEvent(document.querySelectorAll('.package--selector'), 'click');
+let exitStream = Rx.Observable.fromEvent(document, 'click');
+
+packageSelectStream.subscribe( (v) => {
+    console.log(v.target.nextElementSibling)
+    v.target.nextElementSibling.style.display = "block";
+})
+
+exitStream.subscribe( (e) => {
+    let contextPackage = document.querySelectorAll('.package--selector-context');
+    
+    contextPackage.forEach( menu => menu.style.display == 'block' ? menu.style.display == 'none' : null )
+    console.log(contextPackage)
+})
