@@ -986,6 +986,12 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   margin: 10px auto;
 }
 
+.sidepanel--item-trustpilot + h2 + img {
+  margin-top: 10px;
+  width: 94px;
+  height: 12px;
+}
+
 .sidepanel--item-support {
   width: 40px;
   height: 40px;
@@ -1046,4 +1052,106 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 .checkout--info-name {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.checkout--order-complete {
+  width: 800px;
+  float: left;
+  height: 310px;
+  width: 800px;
+  border: 2px solid #D7F0FF;
+  border-radius: 4px;
+  background-color: #F7FCFF;
+  display: inline-block;
+}
+
+.checkout--order-complete > h3 {
+  height: 91px;
+  border-radius: 4px;
+  background-color: #E1F4FF;
+  padding: 30px;
+}
+
+.checkout--order-complete > em {
+  font-weight: bold;
+  padding: 30px;
+  display: block;
+  margin-bottom: -15px;
+}
+
+.checkout--order-complete > p {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.checkout--order-details {
+  clear: both;
+  width: 800px;
+  display: block;
+  float: left;
+  margin-top: -380px;
+}
+
+.checkout--order-invoice {
+  font-style: italic;
+  float: left;
+}
+
+.checkout--order-sms {
+  width: 800px;
+  float: left;
+  margin: 20px 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #efefef;
+}
+
+.promo--share-link {
+  float: left;
+  margin-top: 40px;
+  height: 493px;
+  width: 800px;
+  border-radius: 4px;
+  background-color: #DCEFFF;
+  padding: 30px;
+  padding-right: 230px;
+  background-image: url('../images/signup/completed-guy.png');
+  background-repeat: no-repeat;
+  background-position: 560px 70px;
+  background-size: 211px 327px;
+}
+
+.promo--share-link > h3 {
+  margin: 20px 0;
+}
+
+.promo--share-link > h3.referral {
+  display: inline-block;
+}
+
+.share--link-url {
+  height: 43px;
+  width: 197px;
+  border: 1.5px solid #CECECE;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  display: inline-block;
+  line-height: 2.5em;
+  padding-left: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.promo--share-link > hr {
+  width: 490px;
+  background-color: #C0E2FF;
+}
+
+.share--link-social {
+  margin-top: 20px;
+  width: 800px;
+}
+
+.share--link-social > button {
+  width: 200px;
+  margin-right: 20px;
 }

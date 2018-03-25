@@ -371,23 +371,68 @@ const checkoutCompleted = `
         <p>2. On the activation page you need to enter the activation code, that we just sent by SMS to +45 42700001.</p>
         <p>That’s it! When you have entered the activation code, we will start processing your order.</p>
     </div>
-    <p>If you have not received the SMS message, you can submit a signed form. Further information can be found on the activation page.</p>
-    <hr/>
-    <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperforup@gmail.com.</p>
-    <div class="promo--share-link">
-        <h3>Give $10, Get $25 – Unlimited earnings!</h3>
-        <p>Everyone you refer to One.com, will get a $10 discount on a hosting package – and for each you refer, you will earn $25 – there is no limit to how much you can make.</p>
-        <p>Share your unique referral link below, and for each referral that sign up through your link, you’ll get $25.</p>
-        <hr/>
-        <h3>Share your personal link</h3>
-        <p>Spread the love and discounts using the links below, and start earning!</p>
-        <h3>Your referral link:</h3><span class="share--link-url">http://one.me/enaqydpe</span>
-        <div class="share--link-social">
-            <button>Facebook</button>
-            <button>Twitter</button>
-            <button>Email</button>
-        <div>
+    
+    <div class="order--checkout-sidepanel">
+        <div class="sidepanel--item">
+            <div>
+                <div class="sidepanel--item-guarantee">
+                    <img src="dist/images/signup/guarantee.png"/>
+                </div>
+                <h2>Risk free 15 days</h2>
+                <p>Money Back Guarantee</p>
+            </div>
+        </div>
+        
+        <div class="sidepanel--item">
+            <div>
+                <div class="sidepanel--item-customers">
+                    <img src="dist/images/signup/customers.png"/>
+                </div>
+                <h2>More than 1,500,000</h2>
+                <p>active customers</p>
+            </div>
+        </div>
+
+        <div class="sidepanel--item">
+            <div>
+                <div class="sidepanel--item-trustpilot">
+                    <img src="dist/images/signup/trustpilot.png"/>
+                </div>
+                <h2 class="bold">"Great service"</h2>
+                <img src="dist/images/onecom/sprite-source/trustpilot-logo.svg">
+            </div>
+        </div>
+
+        <div class="sidepanel--item">
+            <div>
+                <div class="sidepanel--item-support">
+                    <img src="dist/images/signup/support.png"/>
+                </div>
+                <h2>We're open</h2>
+                <p>24 hours a day</p>
+            </div>
+        </div>
     </div>
+
+    <div class="checkout--order-details">
+        <p class="checkout--order-sms">If you have not received the SMS message, you can submit a signed form. Further information can be found on the activation page.</p>
+        <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperforup@gmail.com.</p>
+        <div class="promo--share-link">
+            <h3>Give $10, Get $25 – Unlimited earnings!</h3>
+            <p>Everyone you refer to One.com, will get a $10 discount on a hosting <br/> package – and for each you refer, you will earn $25 – there is no limit to <br/> how much you can make.</p>
+            <p>Share your unique referral link below, and for each referral that sign up <br/> through your link, you’ll get $25.</p>
+            <hr/>
+            <h3>Share your personal link</h3>
+            <p>Spread the love and discounts using the links below, and start earning!</p>
+            <h3 class="referral">Your referral link:</h3><span class="share--link-url">http://one.me/enaqydpe</span>
+            <div class="share--link-social">
+                <button>Facebook</button>
+                <button>Twitter</button>
+                <button>Email</button>
+            </div>
+        </div>
+    </div>
+    
 `
 
 const buttonLock = `
@@ -502,6 +547,7 @@ state.subscribe( (state) => {
             })
             break;
         case 1:
+            window && window.scroll(0,0);
             document.querySelector('#customer--ctrl-action').style.display = "block";
             document.querySelector('#btnToCheckout').style.display = "none";
             
@@ -550,6 +596,7 @@ state.subscribe( (state) => {
             basketSidebarLoader()
             break;
         case 2:
+            window && window.scroll(0,0);
             document.querySelector('.order--step-content').innerHTML = checkoutTerms;
             document.querySelector('#btnToCheckout').style.display = "none";
 
@@ -575,6 +622,7 @@ state.subscribe( (state) => {
             })
             break;
         case 3:
+            window && window.scroll(0,0);
             document.querySelector('.order--step-content').innerHTML = checkoutPay;
             document.querySelector('#btnToCheckout').style.display = "none";
 
@@ -604,6 +652,7 @@ state.subscribe( (state) => {
             })
             break;
         case 4:
+            window && window.scroll(0,0);
             document.querySelector('.order--step-content').innerHTML = checkoutCompleted;
 
             let ctrlStepCheckoutCompleted = document.querySelector('#customer--ctrl-action');
