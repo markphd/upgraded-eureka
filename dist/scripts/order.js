@@ -872,17 +872,31 @@ function orderConfirmationLoader() {
     `).join(' ')
 }
 
+// let exitStream = Rx.Observable.fromEvent(document, 'click');
+
+// packageSelectStream.subscribe( (v) => {
+//     console.log(v.target.nextElementSibling)
+//     v.target.nextElementSibling.style.display = "block";
+// })
+
+// exitStream.subscribe( (e) => e.target.className == 'package--selector' ? e.target.nextElementSibling.style.display = "block" : document.querySelectorAll('.package--selector-context').forEach( context => {
+//     context.style.display == 'block' ? context.style.display = 'none' : console.log(context);
+// }));
+
+
+
+
 let packageSelectStream = Rx.Observable.fromEvent(document.querySelectorAll('.package--selector'), 'click');
-let exitStream = Rx.Observable.fromEvent(document, 'click');
 
-packageSelectStream.subscribe( (v) => {
-    console.log(v.target.nextElementSibling)
-    v.target.nextElementSibling.style.display = "block";
-})
-
-exitStream.subscribe( (e) => {
-    let contextPackage = document.querySelectorAll('.package--selector-context');
-    
-    contextPackage.forEach( menu => menu.style.display == 'block' ? menu.style.display == 'none' : null )
-    console.log(contextPackage)
-})
+packageSelectStream.filter(e => {
+        if (e.target.nextElementSibling.style.display == '') {
+            console.log(e.target.nextElementSibling.style.display)
+            e.target.nextElementSibling.style.display = 'block';
+        } else if (e.target.nextElementSibling.style.display == 'block'){
+            console.log(e.target.nextElementSibling.style.display)
+            e.target.nextElementSibling.style.display = 'none'
+        } else {
+            e.target.nextElementSibling.style.display = 'block'
+        }
+    })
+    .subscribe( pair => console.log(pair) )
