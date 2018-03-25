@@ -226,7 +226,7 @@ const checkoutTerms = `
     <div class="order--checkout-sidepanel">
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-guarantee">
                     <img src="dist/images/signup/guarantee.png"/>
                 </div>
                 <h2>Risk free 15 days</h2>
@@ -236,7 +236,7 @@ const checkoutTerms = `
         
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-customers">
                     <img src="dist/images/signup/customers.png"/>
                 </div>
                 <h2>More than 1,500,000</h2>
@@ -246,7 +246,7 @@ const checkoutTerms = `
 
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-trustpilot">
                     <img src="dist/images/signup/trustpilot.png"/>
                 </div>
                 <h2 class="bold">"Great service"</h2>
@@ -256,7 +256,7 @@ const checkoutTerms = `
 
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-support">
                     <img src="dist/images/signup/support.png"/>
                 </div>
                 <h2>We're open</h2>
@@ -302,7 +302,7 @@ const checkoutPay = `
     <div class="order--checkout-sidepanel">
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-guarantee">
                     <img src="dist/images/signup/guarantee.png"/>
                 </div>
                 <h2>Risk free 15 days</h2>
@@ -312,7 +312,7 @@ const checkoutPay = `
         
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-customers">
                     <img src="dist/images/signup/customers.png"/>
                 </div>
                 <h2>More than 1,500,000</h2>
@@ -322,7 +322,7 @@ const checkoutPay = `
 
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-trustpilot">
                     <img src="dist/images/signup/trustpilot.png"/>
                 </div>
                 <h2 class="bold">"Great service"</h2>
@@ -332,7 +332,7 @@ const checkoutPay = `
 
         <div class="sidepanel--item">
             <div>
-                <div class="icon">
+                <div class="sidepanel--item-support">
                     <img src="dist/images/signup/support.png"/>
                 </div>
                 <h2>We're open</h2>
@@ -341,13 +341,24 @@ const checkoutPay = `
         </div>
     </div>
     <div class="checkout--order-summary">
-        <p>We care about the safety of your mail, contacts and website. That’s why we automatically renew your web space and debit your credit card when due. You can cancel at any time.</p>
+        <p class="auto--renewal-statement">We care about the safety of your mail, contacts and website. That’s why we automatically renew your web space and debit your credit card when due. You can cancel at any time.</p>
         <div class="checkout--order-confirmation">
             <h3>Order confirmation</h3>
-
+            <div id="order--checkout-confirmation">
+            </div>
         </div>
         <div class="checkout--customer-info">
-
+            <h3>Customer information</h3>
+            <p class="checkout--info-name">Kasper Forup</p>
+            <div class="checkout--info-address">
+                05-06-1983 <br/>
+                Danmark <br/>
+                En vej 50 <br/>
+                1650 København V <br/>
+                kasperforup@gmail.com <br/>
+                +45 1234 5678 <br/>
+                <a href="/">Edit your information</a>
+            </div>
         </div>
     </div>
 `
@@ -377,6 +388,29 @@ const checkoutCompleted = `
             <button>Email</button>
         <div>
     </div>
+`
+
+const buttonLock = `
+    <span style="display: inline-block; margin-left: 5px;">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <svg width="11px" height="13px" viewBox="0 0 11 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+            <title>Lock-icon</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="3.-Checkout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-386.000000, -721.000000)">
+                <g id="Terms" transform="translate(170.000000, 258.000000)" fill="#FFFFFF">
+                    <g id="Billing" transform="translate(30.000000, 311.000000)">
+                        <g id="Group-3-Copy-6" transform="translate(117.000000, 133.000000)">
+                            <g id="Lock-icon" transform="translate(69.000000, 19.000000)">
+                                <path d="M1.92500454,3.52084265 L1.92500454,5.41664431 L1.10002421,5.41664431 C0.492276197,5.41664431 0,5.90143797 0,6.4999851 L0,11.9167188 C0,12.5152361 0.492276197,13 1.10002421,13 L9.89991525,13 C10.507633,13 11,12.5152361 11,11.9167188 L11,6.4999851 C11,5.90143797 10.507633,5.41664431 9.89991525,5.41664431 L9.07499546,5.41664431 L9.07499546,3.52084265 C9.07499546,1.57630228 7.47437139,0 5.5,0 C3.52562861,0 1.92500454,1.57627247 1.92500454,3.52084265 Z M3.30001211,5.41664431 L3.30001211,3.52084265 C3.30001211,2.32377821 4.2844737,1.35413127 5.49996973,1.35413127 C6.71546577,1.35413127 7.69998789,2.32377821 7.69998789,3.52084265 L7.69998789,5.41664431 L3.30001211,5.41664431 Z M4.39997579,8.39584638 C4.39997579,7.79732906 4.89222171,7.3125354 5.49996973,7.3125354 C6.10771775,7.3125354 6.59993341,7.79732906 6.59993341,8.39584638 C6.59993341,8.77776708 6.39913654,9.11363193 6.09673052,9.30590391 C6.09673052,9.30590391 6.20418136,9.94520077 6.32501059,10.6979828 C6.32501059,10.9226876 6.14077023,11.1041387 5.91249016,11.1041387 L5.0874493,11.1041387 C4.8591995,11.1041387 4.67498941,10.9226876 4.67498941,10.6979828 L4.90326948,9.30590391 C4.60083319,9.11363193 4.39997579,8.77773727 4.39997579,8.39584638 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </span>
 `
 
 // BASKET - Initial Order List 
@@ -470,6 +504,12 @@ state.subscribe( (state) => {
         case 1:
             document.querySelector('#customer--ctrl-action').style.display = "block";
             document.querySelector('.order--step-content').innerHTML = customerRegFormNew + basketSidebar;
+
+            let ctrlStepCustomer = document.querySelector('#customer--ctrl-action');
+            ctrlStepCustomer.style.top = '880px'
+
+            let ctrlCheckoutCustomerBtn = document.querySelector('#customer--ctrl-next > button');
+            ctrlCheckoutCustomerBtn.innerHTML = 'Continue';
             
             let customerType = Rx.Observable.fromEvent(document.querySelectorAll('input[name="customerDataTicket"]'), 'click');
             customerType.subscribe( (event) => {
@@ -477,15 +517,16 @@ state.subscribe( (state) => {
                 let ctrl = document.querySelector('#customer--ctrl-action');
                 let btnNext = document.querySelector('#customer--ctrl-next > button');
                 let btnPrev = document.querySelector('#customer--ctrl-prev > button');
+                ctrl.style.top = '880px'
 
                 let el = event.target.form.lastElementChild;
                 if (event.target.value == 'true') {
                     el.innerHTML = customerExistInputs
-                    ctrl.style.bottom = '180px';
+                    ctrl.style.top = '510px';
                     btnNext.innerHTML = "Sign in"
                 } else {
                     el.innerHTML = customerNewInputs
-                    ctrl.style.bottom = '0';
+                    ctrl.style.top = '880px';
                     btnNext.innerHTML = "Continue"
                 } 
 
@@ -508,6 +549,12 @@ state.subscribe( (state) => {
             break;
         case 2:
             document.querySelector('.order--step-content').innerHTML = checkoutTerms;
+
+            let ctrlStepCheckoutTerms = document.querySelector('#customer--ctrl-action');
+            let ctrlCheckoutTermsBtn = document.querySelector('#customer--ctrl-next > button');
+
+            ctrlStepCheckoutTerms.style.top = '795px';
+            ctrlCheckoutTermsBtn.innerHTML = 'Approve';
             
             let orderNavCheckout = document.querySelectorAll('.order--steps-nav > div')
             orderNavCheckout.forEach( el => {
@@ -528,6 +575,14 @@ state.subscribe( (state) => {
             document.querySelector('.order--step-content').innerHTML = checkoutPay;
             
             let orderNavCheckoutA = document.querySelectorAll('.order--steps-nav > div')
+
+            let ctrl = document.querySelector('#customer--ctrl-action');
+            let btnNext = document.querySelector('#customer--ctrl-next > button');
+            let btnPrev = document.querySelector('#customer--ctrl-prev > button');
+
+            ctrl.style.top = '480px';
+            btnNext.innerHTML = `Pay ${buttonLock}`
+
             orderNavCheckoutA.forEach( el => {
                 let key = el.className.split(' ')[0] == 'order--step-checkout';
                 
@@ -544,6 +599,9 @@ state.subscribe( (state) => {
             break;
         case 4:
             document.querySelector('.order--step-content').innerHTML = checkoutCompleted;
+
+            let ctrlStepCheckoutCompleted = document.querySelector('#customer--ctrl-action');
+            ctrlStepCheckoutCompleted.style.display = 'none';
             
             let orderNavCompleted = document.querySelectorAll('.order--steps-nav > div')
             orderNavCompleted.forEach( el => {

@@ -870,7 +870,6 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   display: none;
   position: absolute;
   left: 30px;
-  bottom: 0;
   padding: 30px 0;
   margin-top: 28px;
 }
@@ -915,6 +914,10 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   background-color: #F7FCFF;
   float: left;
   padding-bottom: 70px;
+}
+
+.order--checkout-pay {
+  padding-bottom: 100px;
 }
 
 .order--checkout-terms > h3, .order--checkout-pay > h3 {
@@ -964,4 +967,33 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 .sidepanel--item {
   text-align: center;
   padding: 30px;
+}
+
+.sidepanel--item-guarantee {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+}
+.sidepanel--item-customers {
+  width: 47px;
+  height: 41px;
+  margin: 10px auto;
+}
+
+.sidepanel--item-trustpilot {
+  width: 154px;
+  height: 34px;
+  margin: 10px auto;
+}
+
+.sidepanel--item-support {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+}
+
+.checkout--order-summary {
+  width: 781px;
+  float: left;
+  margin-top: -150px;
 }
