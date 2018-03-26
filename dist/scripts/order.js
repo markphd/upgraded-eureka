@@ -458,6 +458,17 @@ const buttonLock = `
     </span>
 `
 
+const voucherEntryCode = `
+  <div class="voucher--input-form">
+    
+    <label for="voucherInput">Type voucher code:</label>
+    <input type="text" id="voucherInput" name="voucherInput"/>
+    <div class="voucher--input-add">
+      <button>Add</button>
+    </div>
+  </div>
+`
+
 // BASKET - Initial Order List 
 
 const orderBasket = [
@@ -522,6 +533,8 @@ addExtraStream.subscribe( (event) => {
         // subject.next(orderBasket[i].addons.push(event.target.value))
         orderBasket[i].addons.push(event.target.value)
         }
+
+        // ⚡ TODO: Add checker if addon already exist
     
     basketLoader()
 })
@@ -804,9 +817,9 @@ function basketLoader() {
                 </span>
             </label>
 
-            <span class="order--details-feat">Hosting Starter (25 GB) - 12 months   <em>240.00</em></span>
-            <span class="order--details-feat">Domain fee - first 12 months (.cc)  <em>150.00</em></span>
-            <span class="order--details-feat">Setup fee   <em>115.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting Starter (25 GB) - 12 months   <em>240.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Domain Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Domain Registration - 12 months   <em>240.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Setup Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Setup  <em>240.00</em></span>
             
             <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
@@ -819,7 +832,7 @@ function basketLoader() {
                     <input id="${order.domain}${service}" name="${order.domain}${service}" type="checkbox" checked="checked" />
                     <label for="${order.domain}${service}" class="addon--info-wrapper" style="margin-top: -10px;">
                     <span class="addon--extra-checkbox"></span>
-                    <span class="domain-label">${service} - 12 Months</span>
+                    <span class="addon-label">${service} - 12 Months</span><span class="addon-price">EUR 7.50</span>
                     </label>
                 ` ).join(' ') }
             </div>
@@ -860,22 +873,41 @@ function basketLoader() {
 
     let packageSelectStream = Rx.Observable.fromEvent(document.querySelectorAll('.package--selector'), 'click');
 
-    packageSelectStream.filter(e => {
-            if (e.target.nextElementSibling.style.display == '') {
-                console.log(e.target.nextElementSibling.style.display)
-                e.target.nextElementSibling.style.display = 'block';
-            } else if (e.target.nextElementSibling.style.display == 'block'){
-                console.log(e.target.nextElementSibling.style.display)
-                e.target.nextElementSibling.style.display = 'none'
-            } else {
-                e.target.nextElementSibling.style.display = 'block'
-            }
+    packageSelectStream.subscribe(e => {
+            e.target.nextElementSibling.classList.toggle('show--tooltip')
+
+            // if (e.target.nextElementSibling.style.display == '') {
+            //     console.log(e.target.nextElementSibling.style.display)
+            //     e.target.nextElementSibling.style.display = 'block';
+            // } else if (e.target.nextElementSibling.style.display == 'block'){
+            //     console.log(e.target.nextElementSibling.style.display)
+            //     e.target.nextElementSibling.style.display = 'none'
+            // } else {
+            //     e.target.nextElementSibling.style.display = 'block'
+            // }
         })
-        .subscribe( pair => console.log(pair) )
+        // .subscribe( pair => console.log(pair) )
+
+    let tooltipStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--details-feat > dfn'), 'mouseover');
+
+    tooltipStream.debounceTime(10).subscribe( (v) => {
+        v.target.nextSibling.classList.toggle('show--tooltip')
+        console.log(v.target.nextSibling)
+    })
+
+    let voucherAddStream = Rx.Observable.fromEvent(document.querySelector('.order--details-voucher'), 'click');
+  
+    voucherAddStream.first().subscribe( (item) => {
+      item.target.innerHTML = voucherEntryCode
+      item.target.style.border = 'none';
+      item.target.style.backgroundColor = 'transparent';
+      item.target.style.fontWeight = 'normal';
+    })
 
 }
 
 basketLoader()
+
 
 function basketSidebarLoader() {
     let summaryList = document.querySelector('.order--summary-list');
@@ -885,11 +917,11 @@ function basketSidebarLoader() {
             <input id="${order.domain}" checked="checked" type="checkbox">
             <label for="${order.domain}"><span></span><span class="domain-label">${order.domain}</span>
             </label>
-            <span class="order--details-feat">Hosting Starter (25 GB)</span>
-            <span class="order--details-feat">Domain fee</span>
-            <span class="order--details-feat">Setup fee</span>
+            <span class="side--basket-addon">Hosting Starter (25 GB)</span>
+            <span class="side--basket-addon">Domain fee</span>
+            <span class="side--basket-addon">Setup fee</span>
             ${order.addons.map( (service) => `
-            <span class="order--details-feat">${service}</span>
+            <span class="side--basket-addon">${service}</span>
             ` ).join(' ') }
             <hr/>
             
@@ -913,15 +945,3 @@ function orderConfirmationLoader() {
         </div>
     `).join(' ')
 }
-
-// let exitStream = Rx.Observable.fromEvent(document, 'click');
-
-// packageSelectStream.subscribe( (v) => {
-//     console.log(v.target.nextElementSibling)
-//     v.target.nextElementSibling.style.display = "block";
-// })
-
-// exitStream.subscribe( (e) => e.target.className == 'package--selector' ? e.target.nextElementSibling.style.display = "block" : document.querySelectorAll('.package--selector-context').forEach( context => {
-//     context.style.display == 'block' ? context.style.display = 'none' : console.log(context);
-// }));
-

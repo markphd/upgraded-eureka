@@ -695,7 +695,6 @@ input#match-search {
   top: 25px;
   right: 35px;  
   height: 41px;
-  width: 243px;
   border: 1px solid rgba(45,73,88,0.25);
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -703,15 +702,65 @@ input#match-search {
   font-size: 15px;
   font-weight: bold;
   line-height: 21px;
+  padding: 0 20px;
+  cursor: pointer;
+  line-height: 2.5em;
 }
 
+#voucherInput, #voucherInput:focus {
+  border: 1px solid rgba(45,73,88,0.25);
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  height: 41px;
+}
+
+.voucher--input-add {
+  display: inline-block;
+}
+
+.voucher--input-add > button {
+  height: 41px;
+  width: 68px;
+  border-radius: 4px;
+  background-color: #2D4958;
+  border: none;
+  color: #fff;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.tooltip--feat-info {
+  display: none;
+  position: absolute;
+  width: 250px;
+  background-color: #444444;
+  font-size: 12px;
+  padding: 25px 20px;
+  border-radius: 4px;
+  color: #fff;
+  z-index: 2;
+  top: 30px;
+  left: -20px;
+}
+
+.tooltip--feat-info > h3 {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 10px;
+}
 
 .order--details-feat {
   display: block;
   margin: 3px 2px;
+  position: relative;
 }
 
-.order--details-feat:before {
+.show--tooltip {
+  display: block;
+}
+
+.order--details-feat > dfn {
   content: '';
   display: inline-block;
   background-image: url('../images/signup/grey.svg');
@@ -769,6 +818,18 @@ input#match-search {
   line-height: 14px;
   text-align: center;
   color: #efefef;
+}
+
+.side--basket-addon {
+  display: block;
+}
+
+.addon-label {
+  display: inline-block;
+}
+
+.addon-price {
+  float: right;
 }
 
 input[type="checkbox"] + label > span.addon--extra-checkbox, input[type="checkbox"] + label > span.addon--privacy-checkbox {
