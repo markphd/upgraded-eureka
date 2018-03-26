@@ -35,23 +35,27 @@
 }
 
 .popular-domains--box.com {
-  background-size: 45%;
+  background-size: 40%;
+  background-position: center 55px;
   background-image: url('../images/signup/img-com.png');  
 }
 
 .popular-domains--box.dk {
-  background-size: 50%;
-  background-image: url('../images/signup/img-dkhost.png');  
+  background-size: 25%;
+  background-position: center 30px;
+  background-image: url('../images/signup/img-dk.png');  
 }
 
-.popular-domains--box.me {
-  background-size: 30%;
-  background-image: url('../images/signup/img-me.png');  
+.popular-domains--box.one {
+  background-size: 35%;
+  background-position: center 35px;
+  background-image: url('../images/signup/img-one.png');  
 }
 
-.popular-domains--box.net {
-  background-size: 30%;
-  background-image: url('../images/signup/img-net.png');  
+.popular-domains--box.se {
+  background-size: 25%;
+  background-position: center 55px;
+  background-image: url('../images/signup/img-se.png');  
 }
 
 .popular-domains--title {
