@@ -707,7 +707,7 @@ function basketLoader() {
     productList.innerHTML = orderBasket.map( (order) => `
         <div class="buycustomer__addon__domain">
             <input id="${order.domain}" checked="checked" type="checkbox">
-            <label for="${order.domain}"><span></span><span class="domain-label">${order.domain}</span>
+            <label for="${order.domain}"><span class="selected--order"></span><span class="domain-label">${order.domain}</span>
                 <span class="right">
                     <span class="price-label">
                         <div class="current-package product-hosting-bg active">
@@ -887,6 +887,11 @@ function basketLoader() {
       item.target.style.backgroundColor = 'transparent';
       item.target.style.fontWeight = 'normal';
     })
+
+
+    const removeOrderStream = Rx.Observable.fromEvent(document.querySelectorAll('.selected--order'), 'click');
+    removeOrderStream.map( order => console.log(order) ).subscribe( item => console.log(item))
+
 
 }
 
