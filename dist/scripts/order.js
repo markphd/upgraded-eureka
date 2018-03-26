@@ -508,7 +508,13 @@ const subject = new Rx.Subject(orderBasket);
 
 addExtraStream.subscribe( (event) => { 
 
-        event.target.parentNode.parentNode.style.display = 'none';
+        // event.target.parentNode.parentNode.style.display = 'none';
+        let buttonAddon = event.target;
+
+        buttonAddon.textContent = 'Remove';
+        buttonAddon.style.backgroundColor = '#fff';
+        buttonAddon.style.color = '#2B4A58';
+        buttonAddon.style.border = '1px solid #2B4A58';
 
         // console.log(event.target.parentNode.parentNode.hidden)
 
@@ -688,6 +694,7 @@ state.subscribe( (state) => {
 // BASKET - Info domain list
 
 function basketLoader() {
+
     let productList = document.querySelector('#order--domain-list');
 
     productList.innerHTML = orderBasket.map( (order) => `
@@ -827,10 +834,25 @@ function basketLoader() {
             if (e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!') {
                 e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information will be protected!';
                 e.target.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
+                
+                // console.log(orderBasket)
+                let domain = e.target.parentNode.parentElement.firstElementChild.id;
+                // console.log(domain)
+                let index = orderBasket.findIndex( item => item.domain == domain);
+                // console.log(index)
+                orderBasket[index].addons.push("Domain Privacy")
+
 
             } else {
                 e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information are not protected!'
                 e.target.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
+
+                // console.log(orderBasket)
+                let domain = e.target.parentNode.parentElement.firstElementChild.id;
+                // console.log(domain)
+                let index = orderBasket.findIndex( item => item.domain == domain);
+                // console.log(index)
+                orderBasket[index].addons.pop("Domain Privacy")
             }
         })
         .pairwise()

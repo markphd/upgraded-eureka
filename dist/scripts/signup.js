@@ -108,7 +108,7 @@ domainSearchBtn
 
   	} else {
   	  result.innerHTML = 
-  	    `<h2>These domains are available</h2><span>Annual fee in EUR</span>` +
+  	    `<h2>These domains are available</h2><span id="domainSelectedNum"></span><span>Annual fee in EUR</span>` +
   	  	availableTld.map( tld => `
   	  	  	  <div class="available-list__row">
   	  	  	    <span class="status"></span>
