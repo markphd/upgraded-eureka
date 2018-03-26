@@ -508,6 +508,10 @@ const subject = new Rx.Subject(orderBasket);
 
 addExtraStream.subscribe( (event) => { 
 
+        event.target.parentNode.parentNode.style.display = 'none';
+
+        // console.log(event.target.parentNode.parentNode.hidden)
+
         for(i in orderBasket) {
         // subject.next(orderBasket[i].addons.push(event.target.value))
         orderBasket[i].addons.push(event.target.value)
@@ -784,7 +788,7 @@ function basketLoader() {
                                         <span class="context--feature available"> Security with SSL </span>
                                         <span class="context--feature available"> 8 x CPU </span>
                                         <span class="context--feature available"> SSH </span>
-                                        <span class="context--feature not-available"> Backup & Restore </span>`}
+                                        <span class="context--feature available"> Backup & Restore </span>`}
                                     </div>
                                 </div>
                             </div>  
@@ -900,3 +904,12 @@ packageSelectStream.filter(e => {
         }
     })
     .subscribe( pair => console.log(pair) )
+
+
+function removeOrder(elem) {
+  let removeStream = Rx.Observable.fromEvent(document.querySelector(elem), 'click');
+
+  elStream.subscribe( (e) => console.log(e) )
+}
+
+
