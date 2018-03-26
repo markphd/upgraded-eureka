@@ -574,8 +574,8 @@ span.free-trial + span {
   font-weight: bold;
   border: none;
   // padding: 10px 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .order--match-item em:last-child {
@@ -707,7 +707,7 @@ input#match-search {
   line-height: 2.5em;
 }
 
-#voucherInput, #voucherInput:focus {
+#voucherInput {
   border: 1px solid rgba(45,73,88,0.25);
   margin-left: 10px;
   padding: 5px;
@@ -935,6 +935,9 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   background: #FFF;
   float: right;
   width: 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 4px;
 }
 
 .form--label-wrapper {
@@ -948,6 +951,26 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   width: 400px;
   display: inline-block;
   float: right;
+}
+
+.form--input-helper {
+  display: block;
+  margin: 40px 0;
+  clear: both;
+  padding-top: 15px;
+}
+
+.form--input-helper > p {
+  margin-top: 20px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form--input-helper > a {
+  position: absolute;
+  bottom: 35px;
+  text-decoration: underline;
 }
 
 #birthdate_day, #birthdate_month, #birthdate_year {
@@ -969,6 +992,21 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
 #customerCity, #customerMobile {
   width: 300px;
   float: left;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSdibGFjaycgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0JyB3aWR0aD0nMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTcgMTBsNSA1IDUtNXonLz48cGF0aCBkPSdNMCAwaDI0djI0SDB6JyBmaWxsPSdub25lJy8+PC9zdmc+') !important;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
 }
 
 .form--owner-type {
@@ -994,6 +1032,23 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   position: absolute;
   top: 30px;
   right: 30px;
+}
+
+.order--price-summary {
+  margin-top: -20px;
+  padding: 10px 30px 40px;
+}
+
+.order--price-summary > p {
+  margin: 2px 0;
+}
+
+.order--price-summary > p > em {
+  float: right;
+}
+
+.order--price-summary > p:last-of-type {
+  font-weight: bold;
 }
 
 .order--summary-list {
