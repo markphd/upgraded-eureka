@@ -700,7 +700,7 @@ input#match-search {
   font-size: 18px;
   padding: 33px 30px;
   background-color: #E1F4FF;
-  border: 1px solid #d4f0fe;
+  border-bottom: 1px solid #d4f0fe;
 }
 
 .order--details-voucher {
@@ -1007,6 +1007,7 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   width: 90px;
   margin-right: 10px;
   float: left;
+  height: 43px;
 }
 
 #customerCity, #customerMobile {
@@ -1137,9 +1138,9 @@ select {
 
 .order--checkout-terms > h3, .order--checkout-pay > h3 {
   height: 91px;
-  border-radius: 4px;
   background-color: #E1F4FF;
   padding: 30px;
+  border-bottom: 1px solid #d4f0fe;
 }
 
 .order--checkout-terms > em {
