@@ -92,7 +92,7 @@ domainSearchBtn
 
   	  	const orderSelected = `<span class="checked"></span><input class="domain--tld-select" value="Remove" type="submit">`
   	  	event.target.insertAdjacentHTML("afterend", orderSelected);
-  	  	event.target.attributes[1].value = "Selected"
+  	  	event.target.attributes.value.value = "Selected"
   	  	event.target.style.backgroundColor = "transparent"
   	  	event.target.style.border = 'none'
   	  	event.target.style.color = '#4e4e4e'
