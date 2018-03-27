@@ -679,6 +679,11 @@ input#match-search {
   border: 1px solid #ccc;
 }
 
+// .contentintro-content {
+//   width: 700px;
+//   float: left;
+// }
+
 .order--details-product {
   display: block;
   min-height: 200px;
@@ -1451,4 +1456,31 @@ select {
   width: 230px;
   border-radius: 4px;
   background-color: #707070;
+}
+
+.email--error {
+  height: 130px;
+  width: 700px;
+  border: 2px solid #FFDF96;
+  border-radius: 4px;
+  background-color: #FFFAEF;
+  background-image: url('../images/signup/warning.png');
+  background-repeat: no-repeat;
+  background-position: 25px 28px;
+  background-size: 48px;
+  padding-left: 90px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.email--error > h3 {
+  color: #FF9800;
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 10px;
+}
+
+.email--error > p {
+  font-size: 15px;
+  color: #4E4E4E;
 }
