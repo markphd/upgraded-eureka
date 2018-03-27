@@ -546,27 +546,14 @@ state.subscribe( (state) => {
 
     switch(state.count) {
         case 0:
-            document.querySelector('.order--step-content').innerHTML = "Product Page";
-            
-            let orderNavProduct = document.querySelectorAll('.order--steps-nav > div')
-            orderNavProduct.forEach( el => {
-                let key = el.className.split(' ')[0] == 'order--step-product';
-                
-                if (key) {
-                    console.log(el, true)
-                    el.classList.remove('step-inactive')
-                    el.classList.add('step-active')
-                } else {
-                    console.log(el, false)
-                    el.classList.remove('step-active')
-                    el.classList.add('step-inactive')
-                }
-            })
+            location = "http://localhost:3000/order.html";
             break;
         case 1:
             window && window.scroll(0,0);
-            document.querySelector('#customer--ctrl-action').style.display = "block";
+            document.querySelector('#customer--ctrl-action').style.display = "inline-block";
             document.querySelector('#btnToCheckout').style.display = "none";
+            document.querySelector('.order--steps-nav').style.width = "97%";
+            document.querySelector('.order--steps-nav').style.marginLeft = "15px";
             
             document.querySelector('.order--step-content').innerHTML = customerRegFormNew + basketSidebar;
 
@@ -616,11 +603,15 @@ state.subscribe( (state) => {
             window && window.scroll(0,0);
             document.querySelector('.order--step-content').innerHTML = checkoutTerms;
             document.querySelector('#btnToCheckout').style.display = "none";
+            // document.querySelector('#nav--order-steps').style.width = "100%";
+            document.querySelector('.order--steps-nav').style.width = "97%";
+
 
             let ctrlStepCheckoutTerms = document.querySelector('#customer--ctrl-action');
             let ctrlCheckoutTermsBtn = document.querySelector('#customer--ctrl-next > button');
 
-            ctrlStepCheckoutTerms.style.top = '795px';
+            ctrlStepCheckoutTerms.style.top = 'inherit';
+            ctrlStepCheckoutTerms.style.bottom = '30px';
             ctrlCheckoutTermsBtn.innerHTML = 'Approve';
             
             let orderNavCheckout = document.querySelectorAll('.order--steps-nav > div')
