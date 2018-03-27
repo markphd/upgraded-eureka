@@ -1146,6 +1146,36 @@ select {
 .term--checkbox-wrapper > p {
   margin-left: 30px;
   margin-top: 7px;
+  position: relative;
+}
+
+.term--checkbox-wrapper > p:before {
+  content: '';
+  display: block;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  // background-color: #e4e4e4;
+  background-color: #74A345;
+  position: absolute;
+  top: 6px;
+  left: -25px;
+}
+
+.term--checkbox-wrapper > p:last-of-type:after {
+  content: '';
+  display: block;
+  height: 30px;
+  width: 1px;
+  // background-color: #e4e4e4;
+  background-color: #74A345;
+  position: absolute;
+  top: -20px;
+  left: -19px;
+}
+
+.term--checkbox-accepted {
+  background-color: #74A345;
 }
 
 .term--checkbox-wrapper, .checkout--payment-options {
@@ -1274,7 +1304,24 @@ select {
   border-radius: 4px;
   background-color: #E1F4FF;
   padding: 30px;
+  padding-top: 35px;
+  position: relative;
+  padding-left: 70px;
 }
+
+.checkout--order-complete > h3:before {
+  content: '';
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-image: url('../images/signup/Circle-checkmark.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 
 .checkout--order-complete > em {
   font-weight: bold;
@@ -1312,7 +1359,7 @@ select {
 .promo--share-link {
   float: left;
   margin-top: 40px;
-  height: 493px;
+  height: 510px;
   width: 800px;
   border-radius: 4px;
   background-color: #DCEFFF;
@@ -1358,4 +1405,44 @@ select {
 .share--link-social > button {
   width: 200px;
   margin-right: 20px;
+  border: none;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.share--link-social > button:first-child {
+    background-image: url('../images/onecom/sprite-source/social-facebook.svg');
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    height: 50px;
+    width: 230px;
+    padding-left: 50px;
+    border-radius: 4px;
+    background-color: #3B5998;
+}
+
+.share--link-social > button:nth-child(2) {
+    background-image: url('../images/onecom/sprite-source/social-twitter.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+    padding-left: 50px;
+    height: 50px;
+    width: 230px;
+    border-radius: 4px;
+    background-color: #29A7DE;
+  
+}
+
+.share--link-social > button:last-child {
+  background-image: url('../images/onecom/sprite-source/icon-webmail-white.svg');
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  padding-left: 50px;
+  height: 50px;
+  width: 230px;
+  border-radius: 4px;
+  background-color: #707070;
 }

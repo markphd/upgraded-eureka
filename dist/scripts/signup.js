@@ -133,6 +133,7 @@ domainSearchBtn
 				  	  </div>`).join(' ')
 
   	  	      //SELECT BUTTONS
+            const selectTldTotal = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
   	  	  	const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
   	  		  const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
 
@@ -167,6 +168,11 @@ domainSearchBtn
   	  	          console.log(prev)
   	  	        })
   	  	  	  })
+
+              selectTldTotal.subscribe( e => {
+                let count = document.querySelectorAll('input[value="Remove"]').length
+                document.querySelector('#domainSelectedNum').innerHTML = `${count} domain selected`;
+              })
   	}
 
   });

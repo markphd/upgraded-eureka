@@ -420,9 +420,9 @@ const checkoutCompleted = `
             <p>Spread the love and discounts using the links below, and start earning!</p>
             <h3 class="referral">Your referral link:</h3><span class="share--link-url">http://one.me/enaqydpe</span>
             <div class="share--link-social">
-                <button>Facebook</button>
-                <button>Twitter</button>
-                <button>Email</button>
+                <button>Share on Facebook</button>
+                <button>Tweet on Twitter</button>
+                <button>Invite via Email</button>
             </div>
         </div>
     </div>
@@ -637,6 +637,16 @@ state.subscribe( (state) => {
                     el.classList.add('step-inactive')
                 }
             })
+
+            // let acceptedTermsStream = Rx.Observable.fromEvent(document.querySelector('#checkoutTerms'), 'click');
+
+            // acceptedTermsStream.subscribe( e => {
+            //   // document.querySelectorAll('.term--checkbox-wrapper > p').forEach( item => {
+            //   //   item.classList.toggle('term--checkbox-accepted')
+            //   // })
+            //   console.log(e.target)
+            // })
+
             break;
         case 3:
             window && window.scroll(0,0);
