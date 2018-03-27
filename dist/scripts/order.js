@@ -890,7 +890,13 @@ function basketLoader() {
 
 
     const removeOrderStream = Rx.Observable.fromEvent(document.querySelectorAll('.selected--order'), 'click');
-    removeOrderStream.map( order => console.log(order) ).subscribe( item => console.log(item))
+    removeOrderStream.subscribe( item => {
+      let domain = item.target.parentElement.htmlFor;
+      let index = orderBasket.findIndex( order => order.domain == domain)
+
+      orderBasket.pop(index)
+      basketLoader()
+    })
 
 
 }
