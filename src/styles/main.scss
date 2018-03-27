@@ -944,6 +944,13 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   border-radius: 4px;
 }
 
+.price-list__selected-total {
+  margin-right: 30px;
+  float: right;
+  color: #9E9E9E;
+  font-weight: 600;
+}
+
 .form--label-wrapper {
   width: 200px;
   float: left;

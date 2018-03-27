@@ -36,7 +36,7 @@ const domainOccupied = `
     <input class="btn blue" id="domain_move_back" name="back" value="This is my domain" type="submit">
 </div>
 </div>
-<h2>But these domains are available</h2><span>Annual fee in EUR</span>
+<h2>But these domains are available</h2><span>Annual fee in EUR</span><span class="price-list__selected-total" id="domainSelectedNum"></span>
 `
 
 domainSearchInput.filter(event => event.target.value.length > 6)
@@ -71,6 +71,7 @@ domainSearchBtn
 				  	  </div>`).join(' ')
   	  
       //SELECT BUTTONS
+      const selectTldTotal = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
   	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
 	    const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
 
@@ -106,14 +107,20 @@ domainSearchBtn
         })
   	  })
 
+      selectTldTotal.subscribe( e => {
+        let count = document.querySelectorAll('input[value="Remove"]').length
+        document.querySelector('#domainSelectedNum').innerHTML = `${count} domain selected`;
+      })
+
+
   	} else {
   	  result.innerHTML = 
-  	    `<h2>These domains are available</h2><span id="domainSelectedNum"></span><span>Annual fee in EUR</span>` +
+  	    `<h2>These domains are available</h2><span>Annual fee in EUR</span><span class="price-list__selected-total" id="domainSelectedNum"></span>` +
   	  	availableTld.map( tld => `
   	  	  	  <div class="available-list__row">
   	  	  	    <span class="status"></span>
   	  	  	    <div class="available-list__tld">${userMatch.exec(userDomain)[0]}${tld}</div>
-  	  	  	    <input class="available-domain--select" type="submit" value="Select" readonly="true"></input>
+  	  	  	    <input class="available-domain--select" type="submit" value="Select" ></input>
   	  	  	    <div class="available-list__available-info"><span class="available-list--promo">1st year free <em>20.00</em></span></div>
   	  	  	    <br>
   	  	  	    <hr class="divider">
@@ -126,7 +133,7 @@ domainSearchBtn
 				  	  </div>`).join(' ')
 
   	  	      //SELECT BUTTONS
-  	  	  	  const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
+  	  	  	const selectTld = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
   	  		  const selectTldSearch = Rx.Observable.fromEvent(document.querySelectorAll('.available-domain--select'), 'click');
 
   	  	  	  selectTldSearch.first().subscribe( () => {
