@@ -873,9 +873,15 @@ function basketLoader() {
         })
 
 
-    let tooltipStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--details-feat > dfn'), 'mouseover');
+    let tooltipShowStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--details-feat > dfn'), 'mouseenter');
+    let tooltipHideStream = Rx.Observable.fromEvent(document.querySelectorAll('.order--details-feat > dfn'), 'mouseleave');
 
-    tooltipStream.debounceTime(10).subscribe( (v) => {
+    tooltipShowStream.debounceTime(10).subscribe( (v) => {
+        v.target.nextSibling.classList.toggle('show--tooltip')
+        console.log(v.target.nextSibling)
+    })
+
+    tooltipHideStream.delay(10).subscribe( (v) => {
         v.target.nextSibling.classList.toggle('show--tooltip')
         console.log(v.target.nextSibling)
     })
