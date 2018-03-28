@@ -346,13 +346,13 @@ const checkoutPay = `
           </div>
           <div class="checkout--customer-info">
               <h3>Customer information</h3>
-              <p class="checkout--info-name">Kasper Forup</p>
+              <p class="checkout--info-name">Kasper Andersen</p>
               <div class="checkout--info-address">
                   05-06-1983 <br/>
                   Danmark <br/>
                   En vej 50 <br/>
                   1650 København V <br/>
-                  kasperforup@gmail.com <br/>
+                  kasperandersen@gmail.com <br/>
                   +45 1234 5678 <br/>
                   <a href="/">Edit your information</a>
               </div>
@@ -365,7 +365,7 @@ const checkoutCompleted = `
     <div class="checkout--order-complete">
         <h3>Thank you for choosing one.com</h3>
         <em>Next up you need to activate your order</em>
-        <p>1. We sent you a link for the activation page to kasperforup@gmail.com</p>
+        <p>1. We sent you a link for the activation page to kasperandersen@gmail.com</p>
         <p>2. On the activation page you need to enter the activation code, that we just sent by SMS to +45 42700001.</p>
         <p>That’s it! When you have entered the activation code, we will start processing your order.</p>
     </div>
@@ -414,7 +414,7 @@ const checkoutCompleted = `
 
     <div class="checkout--order-details">
         <p class="checkout--order-sms">If you have not received the SMS message, you can submit a signed form. Further information can be found on the activation page.</p>
-        <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperforup@gmail.com.</p>
+        <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperandersen@gmail.com.</p>
         <div class="promo--share-link">
             <h3>Give $10, Get $25 – Unlimited earnings!</h3>
             <p>Everyone you refer to One.com, will get a $10 discount on a hosting <br/> package – and for each you refer, you will earn $25 – there is no limit to <br/> how much you can make.</p>
@@ -483,7 +483,7 @@ const orderBasket = [
         price: 0
     }
     // {
-    //     domain: "forup.org",
+    //     domain: "andersen.org",
     //     package: "Business",
     //     addons: [],
     //     price: 0
@@ -873,7 +873,7 @@ function basketLoader() {
             <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
             <span class="addon--privacy-checkbox"></span>
-            <span class="domain-label">Domain Privacy - 12 months</span>
+            <span class="domain-label">Domain Privacy - 12 months</span><em class="domain--privacy-price">7.50</em>
             <em class="addon--privacy-info">Your personal information are not protected! <span>?</span><div class="tooltip--feat-info"><h3>Domain Privacy</h3>Hide and protect your personal <br/>information - name, email, address <br/>and phone number in the public <br/>WHOIS databases.</div></em>
             </label>
             <div class="order--addons-list">
@@ -893,12 +893,13 @@ function basketLoader() {
 
     domainPrivacyClick
         .map(e => {
-            if (e.target.nextElementSibling.nextElementSibling.innerHTML == "Your personal information are not protected! <span>?</span><div class=\"tooltip--feat-info\"><h3>Domain Privacy</h3>Hide and protect your personal <br>information - name, email, address <br>and phone number in the public <br>WHOIS databases.</div>") {
+            if (e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML == "Your personal information are not protected! <span>?</span><div class=\"tooltip--feat-info\"><h3>Domain Privacy</h3>Hide and protect your personal <br>information - name, email, address <br>and phone number in the public <br>WHOIS databases.</div>") {
                 console.log(e.target)
                 // e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!'
-                e.target.nextElementSibling.nextElementSibling.innerText = "Your personal information will be protected!";
-                e.target.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "Your personal information will be protected!";
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
                 
+                e.target.nextElementSibling.nextElementSibling.classList.toggle('show--privacy-price')
                 // console.log(orderBasket)
                 let domain = e.target.parentNode.parentElement.firstElementChild.id;
                 // console.log(domain)
@@ -908,10 +909,10 @@ function basketLoader() {
 
 
             } else {
-                e.target.nextElementSibling.nextElementSibling.innerText = "Your personal information are not protected!"
-                e.target.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "Your personal information are not protected!"
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
                 // console.log(e.target.nextElementSibling.nextElementSibling.innerText == 'Your personal information are not protected!\n?')
-
+                e.target.nextElementSibling.nextElementSibling.classList.toggle('show--privacy-price')
                 // console.log(orderBasket)
                 let domain = e.target.parentNode.parentElement.firstElementChild.id;
                 // console.log(domain)

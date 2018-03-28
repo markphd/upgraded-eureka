@@ -925,6 +925,15 @@ input.checkboxDomainPrivacy:checked + label > span:first-of-type {
   height: 14px
 }
 
+.domain--privacy-price {
+  display: none;
+  float: right;
+}
+
+.show--privacy-price {
+  display: inline-block;
+}
+
 
 #customerRegistrantForm:before {
   content: '';
