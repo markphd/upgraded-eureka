@@ -818,8 +818,7 @@ input#match-search {
   background-color: #fff;
 }
 
-.addon--privacy-info:after {
-  content: '?';
+.addon--privacy-info > span {
   background-color: #FF7F7F;
   height: 14px;
   width: 14px;
@@ -831,6 +830,11 @@ input#match-search {
   line-height: 14px;
   text-align: center;
   color: #efefef;
+}
+
+.addon--privacy-info > .tooltip--feat-info {
+  left: 200px;
+
 }
 
 .side--basket-addon {

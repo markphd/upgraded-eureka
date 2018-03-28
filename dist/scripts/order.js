@@ -471,22 +471,39 @@ const voucherEntryCode = `
 
 const orderBasket = [
     {
-        domain: "forup.dk",
+        domain: "kaspersbakery.com",
         package: "Starter",
         addons: [],
         price: 0
     },
     {
-        domain: "forup.one",
-        package: "Professional Plus",
+        domain: "kaspersbakery.dk",
+        package: "Professional",
         addons: [],
         price: 0
+    }
+    // {
+    //     domain: "forup.org",
+    //     package: "Business",
+    //     addons: [],
+    //     price: 0
+    // }
+]
+
+const orderPricing = [
+    {
+        package: "Starter",
+        size: "25 GB",
+        domain: "29.40",
+        hosting: "13.80",
+        setup: "13.80"
     },
     {
-        domain: "forup.org",
-        package: "Business",
-        addons: [],
-        price: 0
+        package: "Professional",
+        size: "100GB",
+        domain: "10.00",
+        hosting: "59.88",
+        setup: "13.80"
     }
 ]
 
@@ -849,7 +866,7 @@ function basketLoader() {
                 </span>
             </label>
 
-            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting Starter (25 GB) - 12 months   <em>240.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting ${order.package} (25 GB) - 12 months   <em>240.00</em></span>
             <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Domain Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Domain Registration - 12 months   <em>240.00</em></span>
             <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Setup Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Setup  <em>240.00</em></span>
             
@@ -857,7 +874,7 @@ function basketLoader() {
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
             <span class="addon--privacy-checkbox"></span>
             <span class="domain-label">Domain Privacy - 12 months</span>
-            <em class="addon--privacy-info">Your personal information are not protected!</em>
+            <em class="addon--privacy-info">Your personal information are not protected! <span>?</span><div class="tooltip--feat-info"><h3>Domain Privacy</h3>Hide and protect your personal <br/>information - name, email, address <br/>and phone number in the public <br/>WHOIS databases.</div></em>
             </label>
             <div class="order--addons-list">
                 ${order.addons.map( (service) => `
@@ -876,8 +893,10 @@ function basketLoader() {
 
     domainPrivacyClick
         .map(e => {
-            if (e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!') {
-                e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information will be protected!';
+            if (e.target.nextElementSibling.nextElementSibling.innerHTML == "Your personal information are not protected! <span>?</span><div class=\"tooltip--feat-info\"><h3>Domain Privacy</h3>Hide and protect your personal <br>information - name, email, address <br>and phone number in the public <br>WHOIS databases.</div>") {
+                console.log(e.target)
+                // e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!'
+                e.target.nextElementSibling.nextElementSibling.innerText = "Your personal information will be protected!";
                 e.target.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
                 
                 // console.log(orderBasket)
@@ -889,8 +908,9 @@ function basketLoader() {
 
 
             } else {
-                e.target.nextElementSibling.nextElementSibling.innerHTML = 'Your personal information are not protected!'
+                e.target.nextElementSibling.nextElementSibling.innerText = "Your personal information are not protected!"
                 e.target.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
+                // console.log(e.target.nextElementSibling.nextElementSibling.innerText == 'Your personal information are not protected!\n?')
 
                 // console.log(orderBasket)
                 let domain = e.target.parentNode.parentElement.firstElementChild.id;
@@ -921,6 +941,19 @@ function basketLoader() {
     tooltipHideStream.delay(10).subscribe( (v) => {
         v.target.nextSibling.classList.toggle('show--tooltip')
         console.log(v.target.nextSibling)
+    })
+
+    let tooltipPrivacyShowStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info > span'), 'mouseenter');
+    let tooltipPrivacyHideStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info > span'), 'mouseleave');
+
+    tooltipPrivacyShowStream.debounceTime(10).subscribe( (v) => {
+        v.target.nextSibling.classList.toggle('show--tooltip')
+        // console.log(v.target)
+    })
+
+    tooltipPrivacyHideStream.delay(10).subscribe( (v) => {
+        v.target.nextSibling.classList.toggle('show--tooltip')
+        // console.log(v.target)
     })
 
     let voucherAddStream = Rx.Observable.fromEvent(document.querySelector('.order--details-voucher'), 'click');
