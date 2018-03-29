@@ -866,7 +866,7 @@ function basketLoader() {
                 </span>
             </label>
 
-            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting ${order.package} (25 GB) - 12 months   <em>240.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting ${order.package} (${orderPricing.filter( item => item.package == order.package).map( package => package.size )}) - 12 months   <em>240.00</em></span>
             <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Domain Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Domain Registration - 12 months   <em>240.00</em></span>
             <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Setup Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Setup  <em>240.00</em></span>
             
@@ -971,7 +971,7 @@ function basketLoader() {
 
 
     const removeOrderStream = Rx.Observable.fromEvent(document.querySelectorAll('.selected--order'), 'click');
-    removeOrderStream.subscribe( item => {
+    removeOrderStream.delay(10).subscribe( item => {
       let domain = item.target.parentElement.htmlFor;
       console.log(domain, "domain")
       let index = orderBasket.findIndex( order => order.domain == domain)
@@ -979,6 +979,7 @@ function basketLoader() {
 
       console.log(orderBasket[index], "about to pop")
       orderBasket.pop(index)
+
       basketLoader()
     })
 
@@ -996,7 +997,7 @@ function basketSidebarLoader() {
             <input id="${order.domain}" checked="checked" type="checkbox">
             <label for="${order.domain}"><span></span><span class="domain-label">${order.domain}</span>
             </label>
-            <span class="side--basket-addon">Hosting Starter (25 GB)</span>
+            <span class="side--basket-addon">Hosting ${order.package} ${orderPricing.filter( item => item.package == order.package).map( package => package.size )}</span>
             <span class="side--basket-addon">Domain fee</span>
             <span class="side--basket-addon">Setup fee</span>
             ${order.addons.map( (service) => `
