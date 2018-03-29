@@ -1018,7 +1018,7 @@ function orderConfirmationLoader() {
             <span class="checkout--confirmation-feat">${order.package} ${orderPricing.filter( item => item.package == order.package).map( package => package.size )} Hosting - ${orderPricing.filter( item => item.package == order.package).map( package => (package.hosting / 12).toFixed(2) )}/month</span> <em style="float: right">EUR ${orderPricing.filter( item => item.package == order.package).map( package => package.hosting )}</em>
             <span class="checkout--confirmation-feat">Setup fee</span> <em style="float: right">EUR 13.80</em>
             ${order.addons.map( (service) => `
-            <span class="checkout--confirmation-feat">${service}</span>
+            <span class="checkout--confirmation-feat">${service}</span><em style="float: right">EUR 7.50</em>
             ` ).join(' ') }
             <hr style="width: 100%;" class="checkout--confirmation-feat"/>
         </div>
