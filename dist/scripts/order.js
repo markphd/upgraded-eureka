@@ -346,13 +346,13 @@ const checkoutPay = `
           </div>
           <div class="checkout--customer-info">
               <h3>Customer information</h3>
-              <p class="checkout--info-name">Kasper Andersen</p>
+              <p class="checkout--info-name">Kasper Jensen</p>
               <div class="checkout--info-address">
                   05-06-1983 <br/>
                   Danmark <br/>
                   En vej 50 <br/>
                   1650 København V <br/>
-                  kasperandersen@gmail.com <br/>
+                  kasperjensen@outlook.com <br/>
                   +45 1234 5678 <br/>
                   <a href="/">Edit your information</a>
               </div>
@@ -365,7 +365,7 @@ const checkoutCompleted = `
     <div class="checkout--order-complete">
         <h3>Thank you for choosing one.com</h3>
         <em>Next up you need to activate your order</em>
-        <p>1. We sent you a link for the activation page to kasperandersen@gmail.com</p>
+        <p>1. We sent you a link for the activation page to kasperjensen@outlook.com</p>
         <p>2. On the activation page you need to enter the activation code, that we just sent by SMS to +45 42700001.</p>
         <p>That’s it! When you have entered the activation code, we will start processing your order.</p>
     </div>
@@ -414,7 +414,7 @@ const checkoutCompleted = `
 
     <div class="checkout--order-details">
         <p class="checkout--order-sms">If you have not received the SMS message, you can submit a signed form. Further information can be found on the activation page.</p>
-        <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperandersen@gmail.com.</p>
+        <p class="checkout--order-invoice">Invoice for order number 1333337 will be sent to kasperjensen@outlook.com.</p>
         <div class="promo--share-link">
             <h3>Give $10, Get $25 – Unlimited earnings!</h3>
             <p>Everyone you refer to One.com, will get a $10 discount on a hosting <br/> package – and for each you refer, you will earn $25 – there is no limit to <br/> how much you can make.</p>
@@ -617,7 +617,7 @@ state.subscribe( (state) => {
                         <div class="email--error">
                           <h3>Email already in use</h3>
                           <p>You have indicated that you are a new customer, but an account with the email <br/>
-                          <b>kasperforup@gmail.com</b> already exist.
+                          <b>kasperjensen@outlook.com</b> already exist.
                         </div>
                       `
                       let orderDetails = document.querySelector('.order--details-product');
@@ -866,9 +866,9 @@ function basketLoader() {
                 </span>
             </label>
 
-            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting ${order.package} (${orderPricing.filter( item => item.package == order.package).map( package => package.size )}) - 12 months   <em>240.00</em></span>
-            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Domain Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Domain Registration - 12 months   <em>240.00</em></span>
-            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Setup Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Setup  <em>240.00</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Hosting</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Hosting ${order.package} (${orderPricing.filter( item => item.package == order.package).map( package => package.size )}) - 12 months   <em>${orderPricing.filter( item => item.package == order.package).map( package => package.hosting )}</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Domain Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Domain Registration - 12 months   <em>${orderPricing.filter( item => item.package == order.package).map( package => package.domain )}</em></span>
+            <span class="order--details-feat"><dfn></dfn><div class="tooltip--feat-info"><h3>Setup Fee</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>Setup  <em>13.80</em></span>
             
             <input id="${order.domain}Privacy" name="${order.domain}Privacy" type="checkbox">
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
@@ -881,7 +881,7 @@ function basketLoader() {
                     <input id="${order.domain}${service}" name="${order.domain}${service}" type="checkbox" checked="checked" />
                     <label for="${order.domain}${service}" class="addon--info-wrapper" style="margin-top: -10px;">
                     <span class="addon--extra-checkbox"></span>
-                    <span class="addon-label">${service} - 12 Months</span><span class="addon-price">EUR 7.50</span>
+                    <span class="addon-label">${service} - 12 Months</span><span class="addon-price">7.50</span>
                     </label>
                 ` ).join(' ') }
             </div>
@@ -1015,8 +1015,8 @@ function orderConfirmationLoader() {
         <div class="checkout--confirmation-item">
             <p class="checkout--confirmation-feat" style="font-weight: bold;">${order.domain}</p>
             <span class="checkout--confirmation-feat">Domain registration - 12 months</span> <em style="float: right">EUR 20.00</em>
-            <span class="checkout--confirmation-feat">Hosting - 0.99/month</span> <em style="float: right">EUR 20.00</em>
-            <span class="checkout--confirmation-feat">Setup fee</span> <em style="float: right">EUR 20.00</em>
+            <span class="checkout--confirmation-feat">${order.package} ${orderPricing.filter( item => item.package == order.package).map( package => package.size )} Hosting - ${orderPricing.filter( item => item.package == order.package).map( package => (package.hosting / 12).toFixed(2) )}/month</span> <em style="float: right">EUR ${orderPricing.filter( item => item.package == order.package).map( package => package.hosting )}</em>
+            <span class="checkout--confirmation-feat">Setup fee</span> <em style="float: right">EUR 13.80</em>
             ${order.addons.map( (service) => `
             <span class="checkout--confirmation-feat">${service}</span>
             ` ).join(' ') }
