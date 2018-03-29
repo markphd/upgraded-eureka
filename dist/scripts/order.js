@@ -874,7 +874,7 @@ function basketLoader() {
             <label for="${order.domain}Privacy" class="addon--info-wrapper">
             <span class="addon--privacy-checkbox"></span>
             <span class="domain-label">Domain Privacy - 12 months</span><em class="domain--privacy-price">7.50</em>
-            <em class="addon--privacy-info">Your personal information are not protected! <span>?</span><div class="tooltip--feat-info"><h3>Domain Privacy</h3>Hide and protect your personal <br/>information - name, email, address <br/>and phone number in the public <br/>WHOIS databases.</div></em>
+            <em class="addon--privacy-info">Your personal information are not protected!</em><span>?</span><div class="tooltip--feat-info"><h3>Domain Privacy</h3>Hide and protect your personal <br/>information - name, email, address <br/>and phone number in the public <br/>WHOIS databases.</div>
             </label>
             <div class="order--addons-list">
                 ${order.addons.map( (service) => `
@@ -893,13 +893,14 @@ function basketLoader() {
 
     domainPrivacyClick
         .map(e => {
-            if (e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML == "Your personal information are not protected! <span>?</span><div class=\"tooltip--feat-info\"><h3>Domain Privacy</h3>Hide and protect your personal <br>information - name, email, address <br>and phone number in the public <br>WHOIS databases.</div>") {
+            if (e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!') {
                 console.log(e.target)
                 // e.target.nextElementSibling.nextElementSibling.innerHTML == 'Your personal information are not protected!'
-                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "Your personal information will be protected!";
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Your personal information will be protected!";
                 e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('addedPrivacy')
-                
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = 'none'
                 e.target.nextElementSibling.nextElementSibling.classList.toggle('show--privacy-price')
+
                 // console.log(orderBasket)
                 let domain = e.target.parentNode.parentElement.firstElementChild.id;
                 // console.log(domain)
@@ -909,10 +910,12 @@ function basketLoader() {
 
 
             } else {
-                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerText = "Your personal information are not protected!"
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Your personal information are not protected!"
                 e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove('addedPrivacy')
                 // console.log(e.target.nextElementSibling.nextElementSibling.innerText == 'Your personal information are not protected!\n?')
                 e.target.nextElementSibling.nextElementSibling.classList.toggle('show--privacy-price')
+
+                e.target.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = 'block'
                 // console.log(orderBasket)
                 let domain = e.target.parentNode.parentElement.firstElementChild.id;
                 // console.log(domain)
@@ -944,8 +947,8 @@ function basketLoader() {
         console.log(v.target.nextSibling)
     })
 
-    let tooltipPrivacyShowStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info > span'), 'mouseenter');
-    let tooltipPrivacyHideStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info > span'), 'mouseleave');
+    let tooltipPrivacyShowStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info + span'), 'mouseenter');
+    let tooltipPrivacyHideStream = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-info + span'), 'mouseleave');
 
     tooltipPrivacyShowStream.debounceTime(10).subscribe( (v) => {
         v.target.nextSibling.classList.toggle('show--tooltip')

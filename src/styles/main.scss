@@ -818,23 +818,24 @@ input#match-search {
   background-color: #fff;
 }
 
-.addon--privacy-info > span {
+.addon--privacy-info + span {
   background-color: #FF7F7F;
   height: 14px;
   width: 14px;
   border-radius: 7px;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 7px;
+  left: 552px;
   font-size: 11px;
   line-height: 14px;
   text-align: center;
   color: #efefef;
+  display: block;
 }
 
-.addon--privacy-info > .tooltip--feat-info {
-  left: 200px;
-
+.addon--privacy-info + span + .tooltip--feat-info {
+  top: 30px;
+  left: 510px;
 }
 
 .side--basket-addon {
