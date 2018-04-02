@@ -891,8 +891,9 @@ input[type="checkbox"]:checked + label > span.addon--extra-checkbox, input[type=
 
 .order--details-summary {
   margin-top: 20px;
-  border-top: 1px solid #d4f0fe;
-  padding: 30px;
+  // border-top: 1px solid #d4f0fe;
+  padding: 20px;
+  height: 120px;
 }
 
 .order--details-summary > p {
@@ -1498,4 +1499,9 @@ select {
 .email--error > p {
   font-size: 15px;
   color: #4E4E4E;
+}
+
+.checkout--confirmation-summary {
+  margin-bottom: 30px;
+  height: 40px;
 }

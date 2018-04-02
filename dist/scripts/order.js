@@ -186,11 +186,6 @@ const basketSidebar = `
       <div class="order--summary-list">
 
       </div>
-      <div class="order--price-summary">
-        <p>Total excl VAT  <em>EUR 32.00</em></p>
-        <p>+25% VAT <em>EUR 8.00</em></p>
-        <p>Total incl VAT <em>EUR 40.00</em></p>
-      </div>
     </div>
 `
 
@@ -474,13 +469,13 @@ const orderBasket = [
         domain: "kaspersbakery.com",
         package: "Starter",
         addons: [],
-        price: 0
+        price: 0.00
     },
     {
         domain: "kaspersbakery.dk",
         package: "Professional",
         addons: [],
-        price: 0
+        price: 0.00
     }
     // {
     //     domain: "andersen.org",
@@ -506,6 +501,54 @@ const orderPricing = [
         setup: "13.80"
     }
 ]
+
+
+const priceSummary = {
+    "total": 0,
+    "totalTax": 0,
+    "totalPrice": 0
+};
+
+function calculatePriceSummary(basket, price) {
+    // const totalPrice = 0;
+    priceSummary.total = 0;
+
+    basket.map( order => {
+        let domain = order.domain;
+        let addonPrice = 7.50 * order.addons.length;
+
+        // let total = 0;
+        // let vat = 0.25;
+        // let tax = total * vat;
+        // let totalPrice = tax + total;
+
+        // let index = price.indexOf({"package":order.package});
+        // console.log(order.package)
+        // console.log(index)
+
+        let packagePriceItems = price.filter( price => price.package == order.package)
+
+        order.price += new Number(packagePriceItems[0].domain)
+        order.price += new Number(packagePriceItems[0].hosting)
+        order.price += new Number(packagePriceItems[0].setup)
+        order.price += new Number(addonPrice)
+ 
+        priceSummary.total += new Number(packagePriceItems[0].domain)
+        priceSummary.total += new Number(packagePriceItems[0].hosting)
+        priceSummary.total += new Number(packagePriceItems[0].setup)
+        priceSummary.total += new Number(addonPrice)
+
+        // console.log(packagePriceItems[0].domain)
+        // console.log(packagePriceItems[0].hosting)
+        // console.log(packagePriceItems[0].setup)
+        // console.log(total, "total")
+        // console.log(totalPricetotal * vat)
+
+        // totalPrice = vat + total;
+        console.log(order.price.toFixed(2))
+    })
+
+}
 
 // ORDER STEPS - Navigation sticky
 
@@ -759,6 +802,7 @@ function basketLoader() {
 
     let productList = document.querySelector('#order--domain-list');
 
+    calculatePriceSummary(orderBasket, orderPricing);
     productList.innerHTML = orderBasket.map( (order) => `
         <div class="buycustomer__addon__domain">
             <input id="${order.domain}" checked="checked" type="checkbox">
@@ -887,7 +931,12 @@ function basketLoader() {
             </div>
         </div>
         `
-    ).join(' ')
+    ).join(' ') + `<div class="order--details-summary">
+        <span class="checkout--confirmation-feat">Total excl VAT </span> <em style="float: right">EUR ${(priceSummary.total).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat">+25% VAT </span> <em style="float: right">EUR ${(priceSummary.total * 0.25).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat" style="font-weight: bold;">Total incl VAT </span> <em style="float: right; font-weight:bold;">EUR ${(priceSummary.total + priceSummary.total * 0.25).toFixed(2)} </em>
+    </div>
+    `
 
     const domainPrivacyClick = Rx.Observable.fromEvent(document.querySelectorAll('.addon--privacy-checkbox'), 'click');
 
@@ -992,6 +1041,8 @@ basketLoader()
 function basketSidebarLoader() {
     let summaryList = document.querySelector('.order--summary-list');
 
+    calculatePriceSummary(orderBasket, orderPricing);
+
     summaryList.innerHTML = orderBasket.map( (order) => `
         <div class="order--summary-item">
             <input id="${order.domain}" checked="checked" type="checkbox">
@@ -1005,11 +1056,18 @@ function basketSidebarLoader() {
             ` ).join(' ') }
             <hr/>
         </div>
-    `).join(' ')
+    `).join(' ') + `<div class="checkout--confirmation-summary">
+        <span class="checkout--confirmation-feat">Total excl VAT </span> <em style="float: right">EUR ${(priceSummary.total).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat">+25% VAT </span> <em style="float: right">EUR ${(priceSummary.total * 0.25).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat" style="font-weight: bold;">Total incl VAT </span> <em style="float: right; font-weight:bold;">EUR ${(priceSummary.total + priceSummary.total * 0.25).toFixed(2)} </em>
+    </div>
+    `
 }
 
 function orderConfirmationLoader() {
     let summaryList = document.querySelector('#order--checkout-confirmation');
+
+    calculatePriceSummary(orderBasket, orderPricing);
 
     summaryList.innerHTML = orderBasket.map( (order) => `
         <div class="checkout--confirmation-item">
@@ -1022,5 +1080,47 @@ function orderConfirmationLoader() {
             ` ).join(' ') }
             <hr style="width: 100%;" class="checkout--confirmation-feat"/>
         </div>
-    `).join(' ')
+    `).join(' ') + `<div class="checkout--confirmation-summary">
+        <span class="checkout--confirmation-feat">Total excl VAT </span> <em style="float: right">EUR ${(priceSummary.total).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat">+25% VAT </span> <em style="float: right">EUR ${(priceSummary.total * 0.25).toFixed(2)}</em>
+        <span class="checkout--confirmation-feat" style="font-weight: bold;">Total incl VAT </span> <em style="float: right; font-weight:bold;">EUR ${(priceSummary.total + priceSummary.total * 0.25).toFixed(2)} </em>
+    </div>
+    `
+
 }
+
+
+
+
+
+// const orderBasket = [
+//     {
+//         domain: "kaspersbakery.com",
+//         package: "Starter",
+//         addons: [],
+//         price: 0
+//     },
+//     {
+//         domain: "kaspersbakery.dk",
+//         package: "Professional",
+//         addons: [],
+//         price: 0
+//     }
+// ]
+
+// const orderPricing = [
+//     {
+//         package: "Starter",
+//         size: "25 GB",
+//         domain: "29.40",
+//         hosting: "13.80",
+//         setup: "13.80"
+//     },
+//     {
+//         package: "Professional",
+//         size: "100GB",
+//         domain: "10.00",
+//         hosting: "59.88",
+//         setup: "13.80"
+//     }
+// ]
